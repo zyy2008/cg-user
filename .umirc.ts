@@ -1,4 +1,9 @@
 import { defineConfig } from '@umijs/max';
+import path from 'path';
+
+function resolve(dir: string) {
+  return path.join(__dirname, dir);
+}
 
 export default defineConfig({
   antd: {},
@@ -9,6 +14,10 @@ export default defineConfig({
   layout: {
     title: '@umijs/max',
   },
+  chainWebpack(memo, { env, webpack }) {
+    // 设置 alias
+    memo.resolve.alias.set('@ajax', resolve('src/utils/ajax'));
+  },
   routes: [
     {
       path: '/',
@@ -17,17 +26,7 @@ export default defineConfig({
     {
       name: '首页',
       path: '/home',
-      component: './Home',
-    },
-    {
-      name: '权限演示',
-      path: '/access',
-      component: './Access',
-    },
-    {
-      name: ' CRUD 示例',
-      path: '/table',
-      component: './Table',
+      component: './home',
     },
   ],
   npmClient: 'yarn',

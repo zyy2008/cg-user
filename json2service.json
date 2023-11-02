@@ -1,0 +1,6 @@
+{
+  "url": "api.json",
+  "remoteUrl": "http://127.0.0.1:4523/export/openapi/7?version=2.0",
+  "type": "swagger",
+  "validateResponse": false
+}

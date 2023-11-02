@@ -1,0 +1,163 @@
+{
+  "info": {
+    "title": "选课",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "教师"
+    }
+  ],
+  "paths": {
+    "/teacher/add": {
+      "post": {
+        "summary": "新增教师",
+        "x-apifox-folder": "教师",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "教师"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "TeacherName": {
+                  "type": "string"
+                },
+                "CourseTypes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "x-apifox-orders": [
+                "TeacherName",
+                "CourseTypes"
+              ],
+              "required": [
+                "TeacherName",
+                "CourseTypes"
+              ],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-ignore-properties": [],
+              "x-apifox-orders": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/3391875/apis/api-115515575-run",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/teacher/delete/{id}": {
+      "post": {
+        "summary": "删除教师",
+        "x-apifox-folder": "教师",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "教师"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-ignore-properties": [],
+              "x-apifox-orders": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/3391875/apis/api-115516055-run",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/teacher/list": {
+      "get": {
+        "summary": "教师列表",
+        "x-apifox-folder": "教师",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "教师"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "TeacherName": {
+                  "type": "string"
+                }
+              },
+              "x-apifox-orders": [
+                "TeacherName"
+              ],
+              "required": [
+                "TeacherName"
+              ],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-ignore-properties": [],
+              "x-apifox-orders": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/3391875/apis/api-115573506-run",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    }
+  },
+  "swagger": "2.0",
+  "definitions": {},
+  "x-components": {}
+}
