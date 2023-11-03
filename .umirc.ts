@@ -37,11 +37,7 @@ export default defineConfig({
     // 设置 alias
     memo.resolve.alias.set("@ajax", resolve("src/utils/ajax"));
   },
-  mfsu: false,
   request: {},
-  history: {
-    type: "browser",
-  },
   qiankun: {
     master: {
       // sandbox: {
@@ -78,6 +74,36 @@ export default defineConfig({
       name: "菜单管理",
       path: "/menu",
       component: "./menu",
+    },
+    {
+      name: "部门管理",
+      path: "/department",
+      component: "./department",
+    },
+    {
+      name: "角色管理",
+      path: "/role",
+      component: "./role",
+    },
+    {
+      name: "岗位管理",
+      path: "/post",
+      component: "./post",
+    },
+    {
+      name: "用户信息管理",
+      path: "/userInfo",
+      component: "./userInfo",
+    },
+    {
+      name: "系统配置管理",
+      path: "/sysConfig",
+      component: "./sysConfig",
+    },
+    {
+      name: "字典管理",
+      path: "/dictionary",
+      component: "./dictionary",
     },
   ],
   npmClient: "yarn",
