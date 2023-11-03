@@ -22,10 +22,10 @@ export const layout: RunTimeLayoutConfig = () => {
   return {
     title: "XX系统",
     layout: "side",
-    // childrenRender: (_, props) => {
-    //   const element = useKeepOutlets();
-    //   return <>{element}</>;
-    // },
+    childrenRender: (_, props) => {
+      const element = useKeepOutlets();
+      return <>{element}</>;
+    },
   };
 };
 

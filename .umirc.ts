@@ -74,6 +74,11 @@ export default defineConfig({
       path: "/index",
       component: "./index",
     },
+    {
+      name: "菜单管理",
+      path: "/menu",
+      component: "./menu",
+    },
   ],
   npmClient: "yarn",
 });
