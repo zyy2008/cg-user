@@ -30,7 +30,6 @@ export const layout: RunTimeLayoutConfig = () => {
 };
 
 export async function getInitialState(): Promise<AppInitialState> {
-  console.log("@222");
   return {
     satList: [],
   };
