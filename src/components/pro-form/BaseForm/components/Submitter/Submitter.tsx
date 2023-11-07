@@ -1,7 +1,7 @@
-import { defineComponent } from 'vue';
-import { Button, Space, type ButtonProps } from 'ant-design-vue';
-import type { SubmitterProps } from './types';
-import type { VueNode } from '@ant-design-vue/pro-utils';
+import { defineComponent } from "vue";
+import { Button, Space, type ButtonProps } from "ant-design-vue";
+import type { SubmitterProps } from "./types";
+import type { VueNode } from "@/components";
 
 const Submitter = defineComponent<
   SubmitterProps & {
@@ -16,13 +16,21 @@ const Submitter = defineComponent<
       | false;
   }
 >({
-  slots: ['submitIcon', 'resetIcon'],
-  props: ['onSubmit', 'onReset', 'searchConfig', 'submitButtonProps', 'resetButtonProps', 'render'] as any,
+  slots: ["submitIcon", "resetIcon"],
+  props: [
+    "onSubmit",
+    "onReset",
+    "searchConfig",
+    "submitButtonProps",
+    "resetButtonProps",
+    "render",
+  ] as any,
   setup(props, { slots }) {
     return () => {
       const { onSubmit, onReset } = props;
 
-      const { submitText = '提交', resetText = '重置' } = props.searchConfig || {};
+      const { submitText = "提交", resetText = "重置" } =
+        props.searchConfig || {};
 
       const submit = () => {
         onSubmit?.();
@@ -35,7 +43,7 @@ const Submitter = defineComponent<
       if (props.submitButtonProps !== false) {
         doms.push(
           <Button
-            type={'primary'}
+            type={"primary"}
             key="submit"
             {...props.submitButtonProps}
             icon={props.submitButtonProps?.icon || slots.submitIcon?.()}
@@ -70,7 +78,9 @@ const Submitter = defineComponent<
           </Button>
         );
       }
-      const renderDom = props.render ? props.render({ ...props, submit, reset }, doms) : doms;
+      const renderDom = props.render
+        ? props.render({ ...props, submit, reset }, doms)
+        : doms;
       if (!renderDom) {
         return null;
       }

@@ -15,7 +15,7 @@ import {
   ProFieldValueEnumType,
   ProSchemaValueEnumObj,
   VueNode,
-} from "@ant-design-vue/pro-utils";
+} from "@/components";
 import { Spin, Space } from "ant-design-vue";
 import renderEmpty from "ant-design-vue/es/config-provider/renderEmpty";
 import SearchSelect from "./SearchSelect";
@@ -71,7 +71,7 @@ export const fieldSelectProps = {
   // 请求
   request: {
     type: Function as PropType<ProFieldRequestData>,
-  }
+  },
 };
 export type FieldSelectProps = Partial<
   ExtractPropTypes<typeof fieldSelectProps>
@@ -80,7 +80,7 @@ export type FieldSelectProps = Partial<
 const FieldSelect = defineComponent({
   inheritAttrs: false,
   props: fieldSelectProps,
-  slots: ["render", "renderFormItem"],
+  slots: ["render", "renderFormItem"] as any,
   setup(props, { slots }) {
     const { defaultKeyWords, loading, options } = useFetchData(props);
 
@@ -95,7 +95,7 @@ const FieldSelect = defineComponent({
 
       const valuesMap = new Map();
 
-      const traverseOptions = (_options: SearchSelectProps['options']) => {
+      const traverseOptions = (_options: SearchSelectProps["options"]) => {
         if (!_options?.length) {
           return valuesMap;
         }
@@ -112,12 +112,11 @@ const FieldSelect = defineComponent({
       return traverseOptions(options.value);
     });
 
-
     return () => {
       const { mode, text, valueEnum, fieldProps } = props;
       const render = getSlot(slots, props, "render") as any;
       const renderFormItem = getSlot(slots, props, "renderFormItem") as any;
-      
+
       if (mode === "read") {
         const dom = (
           <>

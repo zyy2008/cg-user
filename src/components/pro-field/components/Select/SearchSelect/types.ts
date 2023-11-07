@@ -1,6 +1,6 @@
-import type { ExtractPropTypes, PropType } from 'vue';
-import { selectProps, type DefaultOptionType } from 'ant-design-vue/es/select';
-import type { VueNode, ProFieldRequestData } from '@ant-design-vue/pro-utils';
+import type { ExtractPropTypes, PropType } from "vue";
+import { selectProps, type DefaultOptionType } from "ant-design-vue/es/select";
+import type { VueNode, ProFieldRequestData } from "@/components";
 
 const omitSelectProps = selectProps();
 
@@ -38,4 +38,6 @@ export const searchSelectProps = {
   },
 };
 
-export type SearchSelectProps = Partial<ExtractPropTypes<typeof searchSelectProps>>;
+export type SearchSelectProps = Partial<
+  ExtractPropTypes<typeof searchSelectProps>
+>;

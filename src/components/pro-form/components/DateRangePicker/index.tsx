@@ -1,12 +1,22 @@
-import { defineComponent, type PropType, ExtractPropTypes, App, DefineComponent, Plugin } from 'vue';
-import { rangePickerProps, type CommonProps } from 'ant-design-vue/es/date-picker/generatePicker/props';
-import { getSlot } from '@ant-design-vue/pro-utils';
-import { pick } from 'lodash-es';
-import type { Dayjs } from 'dayjs';
-import { rangePickerSlots } from '@ant-design-vue/pro-field';
-import ProFormField, { proFormFieldProps } from '../Field';
-import { proFormItemProps } from '../FormItem';
-import type { VueNode } from 'ant-design-vue/lib/_util/type';
+import {
+  defineComponent,
+  type PropType,
+  ExtractPropTypes,
+  App,
+  DefineComponent,
+  Plugin,
+} from "vue";
+import {
+  rangePickerProps,
+  type CommonProps,
+} from "ant-design-vue/es/date-picker/generatePicker/props";
+import { getSlot } from "@/components";
+import { pick } from "lodash-es";
+import type { Dayjs } from "dayjs";
+import { rangePickerSlots } from "@/components";
+import ProFormField, { proFormFieldProps } from "../Field";
+import { proFormItemProps } from "../FormItem";
+import type { VueNode } from "ant-design-vue/lib/_util/type";
 
 const rangeProps = rangePickerProps<Dayjs>();
 
@@ -17,41 +27,47 @@ const props = {
   fieldProps: {
     type: Object as PropType<
       Omit<
-        Omit<CommonProps<Dayjs>, 'placeholder'> &
+        Omit<CommonProps<Dayjs>, "placeholder"> &
           RangePickerProps & {
             placeholder: string[];
           },
-        'value'
+        "value"
       >
     >,
   },
 };
 
-export type ProFormDateRangePickerProps = Partial<ExtractPropTypes<typeof props>>;
+export type ProFormDateRangePickerProps = Partial<
+  ExtractPropTypes<typeof props>
+>;
 
 export const ProFormDateRangePicker = defineComponent({
-  name: 'ProFormDateRangePicker',
+  name: "ProFormDateRangePicker",
   inheritAttrs: false,
   props,
-  slots: rangePickerSlots,
+  slots: rangePickerSlots as any,
   setup(props, { slots }) {
     const formItemProps = {
       ...props.formItemProps,
       ...pick(props, Object.keys(proFormItemProps)),
     };
-    const suffixIcon = getSlot<() => VueNode>(slots, props, 'suffixIcon');
-    const prevIcon = getSlot<() => VueNode>(slots, props, 'prevIcon');
-    const nextIcon = getSlot<() => VueNode>(slots, props, 'nextIcon');
-    const superPrevIcon = getSlot<() => VueNode>(slots, props, 'superPrevIcon');
-    const superNextIcon = getSlot<() => VueNode>(slots, props, 'superNextIcon');
-    const renderExtraFooter = getSlot<() => VueNode>(slots, props, 'renderExtraFooter');
-    const dateRender = getSlot<() => VueNode>(slots, props, 'dateRender');
+    const suffixIcon = getSlot<() => VueNode>(slots, props, "suffixIcon");
+    const prevIcon = getSlot<() => VueNode>(slots, props, "prevIcon");
+    const nextIcon = getSlot<() => VueNode>(slots, props, "nextIcon");
+    const superPrevIcon = getSlot<() => VueNode>(slots, props, "superPrevIcon");
+    const superNextIcon = getSlot<() => VueNode>(slots, props, "superNextIcon");
+    const renderExtraFooter = getSlot<() => VueNode>(
+      slots,
+      props,
+      "renderExtraFooter"
+    );
+    const dateRender = getSlot<() => VueNode>(slots, props, "dateRender");
 
     return () => {
       const { fieldProps, colProps } = props;
       return (
         <ProFormField
-          valueType={'dateRange'}
+          valueType={"dateRange"}
           fieldProps={{
             suffixIcon,
             prevIcon,
@@ -62,7 +78,7 @@ export const ProFormDateRangePicker = defineComponent({
             dateRender,
             ...fieldProps,
           }}
-          filedConfig={{ valueType: 'dateRange' }}
+          filedConfig={{ valueType: "dateRange" }}
           colProps={colProps}
           formItemProps={formItemProps}
           {...formItemProps}
@@ -77,4 +93,5 @@ ProFormDateRangePicker.install = (app: App) => {
   return app;
 };
 
-export default ProFormDateRangePicker as DefineComponent<ProFormDateRangePickerProps> & Plugin;
+export default ProFormDateRangePicker as DefineComponent<ProFormDateRangePickerProps> &
+  Plugin;

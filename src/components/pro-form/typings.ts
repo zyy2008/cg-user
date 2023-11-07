@@ -1,11 +1,21 @@
-import type { EmitsOptions, SetupContext, CSSProperties, PropType, ExtractPropTypes } from 'vue';
-import type { VueNode, ProFieldValueType, ProFieldRequestData } from '@ant-design-vue/pro-utils';
-import type { ProFormItemProps } from './components/FormItem';
-import type { ProFieldPropsType } from '@ant-design-vue/pro-field';
-import type { ColProps } from 'ant-design-vue/es/col';
-import type { RowProps } from 'ant-design-vue/es/row';
+import type {
+  EmitsOptions,
+  SetupContext,
+  CSSProperties,
+  PropType,
+  ExtractPropTypes,
+} from "vue";
+import type {
+  VueNode,
+  ProFieldValueType,
+  ProFieldRequestData,
+} from "@/components";
+import type { ProFormItemProps } from "./components/FormItem";
+import type { ProFieldPropsType } from "@/components";
+import type { ColProps } from "ant-design-vue/es/col";
+import type { RowProps } from "ant-design-vue/es/row";
 
-export type EmitFn<E = EmitsOptions> = SetupContext<E>['emit'];
+export type EmitFn<E = EmitsOptions> = SetupContext<E>["emit"];
 
 export type Recordable<T = any> = Record<string, T>;
 
@@ -95,14 +105,16 @@ export const proFormGridConfig = {
   },
 };
 
-export type ProFormGridConfig = Partial<ExtractPropTypes<typeof proFormGridConfig>>;
+export type ProFormGridConfig = Partial<
+  ExtractPropTypes<typeof proFormGridConfig>
+>;
 
 // 暴露给外部使用的ProField属性
 export interface ProFieldProps {
   light?: boolean;
   emptyText?: VueNode;
   label?: VueNode;
-  mode?: 'read' | 'edit';
+  mode?: "read" | "edit";
   render?: any;
   readonly?: boolean;
 }
@@ -154,7 +166,7 @@ export type ProFormFieldItemProps<T = Record<string, any>> = {
    * <ProFormText fieldProps={{placeholder:"请输入！"}} />
    */
   fieldProps?: FieldProps & T;
-} & Omit<ProFieldPropsType, 'valueType'> &
-  Pick<ProFormGridConfig, 'colProps'> &
+} & Omit<ProFieldPropsType, "valueType"> &
+  Pick<ProFormGridConfig, "colProps"> &
   ProFormItemProps &
   ExtendsProps;

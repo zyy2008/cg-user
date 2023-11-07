@@ -1,9 +1,15 @@
-import { shallowReactive, isReactive, watch, watchEffect, shallowRef } from 'vue';
-import { isNil, isEqual, omitBy } from 'lodash-es';
-import type { SpinProps, PaginationProps } from 'ant-design-vue';
-import type { FetchData } from '../typings';
+import {
+  shallowReactive,
+  isReactive,
+  watch,
+  watchEffect,
+  shallowRef,
+} from "vue";
+import { isNil, isEqual, omitBy } from "lodash-es";
+import type { SpinProps, PaginationProps } from "ant-design-vue";
+import type { FetchData } from "../typings";
 
-const isEmpty = (value: unknown) => isEqual(value, '') || isNil(value);
+const isEmpty = (value: unknown) => isEqual(value, "") || isNil(value);
 
 const omitNil = (object: Record<string, unknown>) => omitBy(object, isEmpty);
 
@@ -30,7 +36,7 @@ export type FetchOptions<RecordType> = Partial<{
 export const useFetchData = <T>(
   getData: FetchData<T> | undefined,
   props: FetchDataProps<T> = {},
-  options?: FetchOptions<T>,
+  options?: FetchOptions<T>
 ) => {
   const state = isReactive(props) ? props : shallowReactive(props);
 
@@ -80,14 +86,18 @@ export const useFetchData = <T>(
       context.loading = state.loading || true;
       const {
         pagination: { pageSize, current },
-      } = context;
+      } = context as any;
 
       const params = {
         ...queryFilter.value,
         ...state.params,
       };
 
-      const { success, data, total = data.length } = await getData({ pageSize, current, ...params });
+      const {
+        success,
+        data,
+        total = data.length,
+      } = await getData({ pageSize, current, ...params });
       if (success !== false) {
         context.dataSource = data;
         onLoad?.(data);
@@ -111,7 +121,7 @@ export const useFetchData = <T>(
           loading: state.loading,
           dataSource: state.dataSource,
           pagination: state.pagination,
-        }),
+        })
       );
   });
 
@@ -119,7 +129,10 @@ export const useFetchData = <T>(
     () => context.pagination,
     (current, previous) => {
       // 如果两次页码相等是不需要查询的，但pageSize发生变化是需要查询的。
-      if (previous?.current === current.current && previous?.pageSize === current.pageSize) {
+      if (
+        previous?.current === current.current &&
+        previous?.pageSize === current.pageSize
+      ) {
         return;
       }
       // pageSize 修改后返回第一页。
@@ -128,7 +141,7 @@ export const useFetchData = <T>(
       }
       fetchData();
     },
-    { immediate: true },
+    { immediate: true }
   );
 
   watch([() => state.params, queryFilter], async (current, previous) => {

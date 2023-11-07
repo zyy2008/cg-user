@@ -18,7 +18,7 @@ import {
   ProFieldValueObjectType,
   VueNode,
   VueText,
-} from "@ant-design-vue/pro-utils";
+} from "@/components";
 import { isValidElement } from "ant-design-vue/es/_util/props-util";
 import { cloneVNodes } from "ant-design-vue/es/_util/vnode";
 import { warning } from "ant-design-vue/es/vc-util/warning";

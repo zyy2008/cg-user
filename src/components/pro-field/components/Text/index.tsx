@@ -1,24 +1,29 @@
-import { defineComponent, type App, type Plugin, type DefineComponent } from 'vue';
-import { Input } from 'ant-design-vue';
-import { textFieldProps, type TextFieldProps } from './types';
-import 'ant-design-vue/es/input/style/index.less';
+import {
+  defineComponent,
+  type App,
+  type Plugin,
+  type DefineComponent,
+} from "vue";
+import { Input } from "ant-design-vue";
+import { textFieldProps, type TextFieldProps } from "./types";
+import "ant-design-vue/es/input/style/index.less";
 
 const FieldText = defineComponent({
-  name: 'FieldText',
+  name: "FieldText",
   inheritAttrs: false,
   props: textFieldProps,
-  slots: ['render', 'renderFormItem'],
+  slots: ["render", "renderFormItem"] as any,
   setup(props, { slots }) {
     return () => {
       const { type, mode, text, emptyText, fieldProps } = props;
-      const placeholder = fieldProps.placeholder || '请输入';
+      const placeholder = fieldProps.placeholder || "请输入";
       const render = props.render ?? slots?.render;
       const renderFormItem = props.renderFormItem ?? slots?.renderFormItem;
-      if (mode === 'read') {
+      if (mode === "read") {
         const dom = (
           <>
             {fieldProps?.prefix}
-            {text ?? (emptyText || '-')}
+            {text ?? (emptyText || "-")}
             {fieldProps?.suffix}
           </>
         );
@@ -27,8 +32,15 @@ const FieldText = defineComponent({
         }
         return dom;
       }
-      if (mode === 'edit' || mode === 'update') {
-        const renderDom = <Input {...fieldProps} type={type} allowClear placeholder={placeholder} />;
+      if (mode === "edit" || mode === "update") {
+        const renderDom = (
+          <Input
+            {...fieldProps}
+            type={type}
+            allowClear
+            placeholder={placeholder}
+          />
+        );
         if (renderFormItem) {
           return renderFormItem(text, { mode, fieldProps }, renderDom);
         }

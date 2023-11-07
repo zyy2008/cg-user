@@ -1,28 +1,28 @@
-import { ref, defineComponent, type App, DefineComponent, Plugin } from 'vue';
-import { Space, InputPassword } from 'ant-design-vue';
-import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons-vue';
-import { passwordTextProps, type PasswordTextProps } from './types';
+import { ref, defineComponent, type App, DefineComponent, Plugin } from "vue";
+import { Space, InputPassword } from "ant-design-vue";
+import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons-vue";
+import { passwordTextProps, type PasswordTextProps } from "./types";
 
 const FieldPassword = defineComponent({
-  name: 'FieldPassword',
+  name: "FieldPassword",
   inheritAttrs: false,
   props: passwordTextProps,
-  slots: ['render', 'renderFormItem'],
+  slots: ["render", "renderFormItem"] as any,
   setup(props, { slots }) {
     return () => {
       const { mode, text, fieldProps } = props;
-      const placeholder = fieldProps.placeholder || '请输入';
+      const placeholder = fieldProps.placeholder || "请输入";
       const render = props.render ?? slots.render;
       const renderFormItem = props.renderFormItem ?? slots?.renderFormItem;
 
       const visible = ref(props.visible);
 
-      if (mode === 'read') {
+      if (mode === "read") {
         let dom = <>-</>;
         if (text) {
           dom = (
             <Space>
-              <span>{visible.value ? text : '＊ ＊ ＊ ＊ ＊'}</span>
+              <span>{visible.value ? text : "＊ ＊ ＊ ＊ ＊"}</span>
               <a onClick={() => (visible.value = !visible.value)}>
                 {visible.value ? <EyeOutlined /> : <EyeInvisibleOutlined />}
               </a>
@@ -34,8 +34,14 @@ const FieldPassword = defineComponent({
         }
         return dom;
       }
-      if (mode === 'edit' || mode === 'update') {
-        const renderDom = <InputPassword {...props.fieldProps} allowClear placeholder={placeholder} />;
+      if (mode === "edit" || mode === "update") {
+        const renderDom = (
+          <InputPassword
+            {...props.fieldProps}
+            allowClear
+            placeholder={placeholder}
+          />
+        );
         if (renderFormItem) {
           return renderFormItem(text, { mode, fieldProps }, renderDom);
         }

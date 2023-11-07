@@ -1,9 +1,9 @@
-import { defineComponent, ref } from 'vue';
-import { Select } from 'ant-design-vue';
-import { searchSelectProps } from './types';
-import { getSlot } from '@ant-design-vue/pro-utils';
+import { defineComponent, ref } from "vue";
+import { Select } from "ant-design-vue";
+import { searchSelectProps } from "./types";
+import { getSlot } from "@/components";
 
-export const slots = ['default'];
+export const slots = ["default"] as any;
 
 const SearchSelect = defineComponent({
   inheritAttrs: false,
@@ -12,7 +12,7 @@ const SearchSelect = defineComponent({
   setup(props, { slots }) {
     const searchValue = ref(props.searchValue);
 
-    const children = getSlot(slots, props, 'default');
+    const children = getSlot(slots, props, "default");
 
     return () => {
       const {
@@ -35,13 +35,13 @@ const SearchSelect = defineComponent({
           autoClearSearchValue={autoClearSearchValue}
           {...restProps}
           allowClear
-          placeholder={placeholder || '请选择'}
+          placeholder={placeholder || "请选择"}
           searchValue={searchValue.value}
           onClear={() => {
             onClear?.();
-            fetchData?.('');
+            fetchData?.("");
             if (showSearch) {
-              searchValue.value = '';
+              searchValue.value = "";
             }
           }}
           onSearch={
@@ -57,9 +57,9 @@ const SearchSelect = defineComponent({
           }
           onChange={(value, optionList) => {
             if (showSearch && autoClearSearchValue) {
-              if (!searchValue.value) fetchData?.('');
-              onSearch?.('');
-              searchValue.value = '';
+              if (!searchValue.value) fetchData?.("");
+              onSearch?.("");
+              searchValue.value = "";
             }
             if (!labelInValue) {
               onChange?.(value, optionList);
