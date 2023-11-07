@@ -5,7 +5,6 @@ import ProLayout, {
 } from "@ant-design-vue/pro-layout";
 import type { MenuState } from "@ant-design-vue/pro-layout";
 import { RouterView, useRouter } from "vue-router";
-import { Card } from "ant-design-vue";
 
 const BasicLayout = defineComponent({
   setup() {
