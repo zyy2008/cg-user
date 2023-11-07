@@ -46,6 +46,7 @@
     "ant-design-vue": "^3.2.20",
     "core-js": "^3.33.2",
     "lodash-es": "^4.17.21",
+    "screenfull": "^6.0.2",
     "umi-request": "^1.4.0",
     "vue": "^3.3.8",
     "vue-class-component": "^7.2.6",

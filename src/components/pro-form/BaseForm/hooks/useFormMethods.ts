@@ -1,5 +1,5 @@
-import { proxyToRaw } from "@/components";
-import type { Recordable } from "../../typings";
+import { proxyToRaw } from '@ant-design-vue/pro-utils';
+import type { Recordable } from '../../typings';
 
 export const useFormMethods = () => {
   function handleFormValues(values: Recordable) {

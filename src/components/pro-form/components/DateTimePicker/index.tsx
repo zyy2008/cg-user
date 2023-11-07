@@ -1,38 +1,24 @@
-import {
-  defineComponent,
-  type PropType,
-  ExtractPropTypes,
-  App,
-  DefineComponent,
-  Plugin,
-} from "vue";
-import type {
-  CommonProps,
-  DatePickerProps,
-} from "ant-design-vue/es/date-picker/generatePicker/props";
-import { getSlot } from "@/components";
-import type { Dayjs } from "dayjs";
-import { pick } from "lodash-es";
-import { fieldDatePickerSlots } from "@/components";
-import ProFormField, { proFormFieldProps } from "../Field";
-import { proFormItemProps } from "../FormItem";
-import type { VueNode } from "ant-design-vue/lib/_util/type";
+import { defineComponent, type PropType, ExtractPropTypes, App, DefineComponent, Plugin } from 'vue';
+import type { CommonProps, DatePickerProps } from 'ant-design-vue/es/date-picker/generatePicker/props';
+import { getSlot } from '@ant-design-vue/pro-utils';
+import type { Dayjs } from 'dayjs';
+import { pick } from 'lodash-es';
+import { fieldDatePickerSlots } from '@ant-design-vue/pro-field';
+import ProFormField, { proFormFieldProps } from '../Field';
+import { proFormItemProps } from '../FormItem';
+import type { VueNode } from 'ant-design-vue/lib/_util/type';
 
 const props = {
   ...proFormFieldProps,
   fieldProps: {
-    type: Object as PropType<
-      Omit<CommonProps<Dayjs> & DatePickerProps<Dayjs>, "value">
-    >,
+    type: Object as PropType<Omit<CommonProps<Dayjs> & DatePickerProps<Dayjs>, 'value'>>,
   },
 };
 
-export type ProFormDateTimePickerProps = Partial<
-  ExtractPropTypes<typeof props>
->;
+export type ProFormDateTimePickerProps = Partial<ExtractPropTypes<typeof props>>;
 
 export const ProFormDateTimePicker = defineComponent({
-  name: "ProFormDatePicker",
+  name: 'ProFormDatePicker',
   inheritAttrs: false,
   props,
   slots: fieldDatePickerSlots,
@@ -41,23 +27,19 @@ export const ProFormDateTimePicker = defineComponent({
       ...props.formItemProps,
       ...pick(props, Object.keys(proFormItemProps)),
     };
-    const suffixIcon = getSlot<() => VueNode>(slots, props, "suffixIcon");
-    const prevIcon = getSlot<() => VueNode>(slots, props, "prevIcon");
-    const nextIcon = getSlot<() => VueNode>(slots, props, "nextIcon");
-    const superPrevIcon = getSlot<() => VueNode>(slots, props, "superPrevIcon");
-    const superNextIcon = getSlot<() => VueNode>(slots, props, "superNextIcon");
-    const renderExtraFooter = getSlot<() => VueNode>(
-      slots,
-      props,
-      "renderExtraFooter"
-    );
-    const dateRender = getSlot<() => VueNode>(slots, props, "dateRender");
+    const suffixIcon = getSlot<() => VueNode>(slots, props, 'suffixIcon');
+    const prevIcon = getSlot<() => VueNode>(slots, props, 'prevIcon');
+    const nextIcon = getSlot<() => VueNode>(slots, props, 'nextIcon');
+    const superPrevIcon = getSlot<() => VueNode>(slots, props, 'superPrevIcon');
+    const superNextIcon = getSlot<() => VueNode>(slots, props, 'superNextIcon');
+    const renderExtraFooter = getSlot<() => VueNode>(slots, props, 'renderExtraFooter');
+    const dateRender = getSlot<() => VueNode>(slots, props, 'dateRender');
 
     return () => {
       const { fieldProps, colProps } = props;
       return (
         <ProFormField
-          valueType={"dateTime"}
+          valueType={'dateTime'}
           fieldProps={{
             ...fieldProps,
             suffixIcon,
@@ -68,7 +50,7 @@ export const ProFormDateTimePicker = defineComponent({
             renderExtraFooter,
             dateRender,
           }}
-          filedConfig={{ valueType: "dateTime" }}
+          filedConfig={{ valueType: 'dateTime' }}
           colProps={colProps}
           formItemProps={formItemProps}
           {...formItemProps}
@@ -83,5 +65,4 @@ ProFormDateTimePicker.install = (app: App) => {
   return app;
 };
 
-export default ProFormDateTimePicker as DefineComponent<ProFormDateTimePickerProps> &
-  Plugin;
+export default ProFormDateTimePicker as DefineComponent<ProFormDateTimePickerProps> & Plugin;
