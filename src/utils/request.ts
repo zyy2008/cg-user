@@ -1,12 +1,11 @@
+/* eslint-disable no-case-declarations */
 import { extend } from "umi-request";
 import type {
   ResponseError,
   RequestMethod,
   RequestOptionsInit,
 } from "umi-request";
-import { notification } from "antd";
-
-declare var http: string;
+import { notification } from "ant-design-vue";
 
 const codeMessage: Record<number, string> = {
   200: "服务器成功返回请求的数据。",
@@ -53,8 +52,7 @@ const errorHandler = (error: ResponseError) => {
  */
 export const request: RequestMethod = extend({
   errorHandler,
-  // prefix: "http://192.169.7.12:8079",
-  prefix: http || window?.config?.http || "",
+  prefix: "http://192.169.7.200:8070",
 });
 
 const { interceptors } = request;
@@ -88,14 +86,15 @@ interceptors.response.use(async (response: Response, opt) => {
           ? decodeURI(disposition.split(";")[1].split("filename=")[1])
           : "";
         const blob = await response.clone().blob();
-        var url = window.URL.createObjectURL(blob);
-        var a = document.createElement("a");
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
         a.href = url;
         a.download = filename;
         document.body.appendChild(a); // append the element to the dom
         a.click();
         a.remove(); // afterwards, remove the element
         break;
+
       default:
         break;
     }
@@ -109,10 +108,10 @@ interceptors.response.use(async (response: Response, opt) => {
   if (hasSuccess) {
     return res;
   }
-  // notification.error({
-  //   message: `请求错误`,
-  //   description: errorMsg,
-  // });
+  notification.error({
+    message: `请求错误`,
+    description: errorMsg,
+  });
   return res;
 });
 

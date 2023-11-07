@@ -1,40 +1,18 @@
-import { useKeepOutlets, RunTimeLayoutConfig } from "@umijs/max";
-import { APIS } from "@/services";
+import { FunctionalComponent } from "vue";
+import { ConfigProvider } from "ant-design-vue";
+import { RouterView } from "vue-router";
+import zhCN from "ant-design-vue/es/locale/zh_CN";
+import "./global.less";
 
-declare var apps: string;
+const App: FunctionalComponent = () => (
+  <ConfigProvider
+    style={{
+      height: "100%",
+    }}
+    locale={zhCN}
+  >
+    <RouterView />
+  </ConfigProvider>
+);
 
-declare global {
-  interface Window {
-    config?: any;
-  }
-}
-
-export declare type AppInitialState = {
-  satList: {
-    pkId?: number;
-    title: string;
-    label: React.ReactNode;
-    value: any;
-  }[];
-};
-
-export const layout: RunTimeLayoutConfig = () => {
-  return {
-    title: "XX系统",
-    layout: "side",
-    childrenRender: (_, props) => {
-      const element = useKeepOutlets();
-      return <>{element}</>;
-    },
-  };
-};
-
-export async function getInitialState(): Promise<AppInitialState> {
-  return {
-    satList: [],
-  };
-}
-
-export const qiankun = {
-  apps: apps || window?.config?.apps,
-};
+export default App;
