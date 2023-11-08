@@ -18,7 +18,11 @@
     "types": ["webpack-env"],
     "paths": {
       "@/*": ["src/*"],
-      "@ajax": ["src/utils/ajax"]
+      "@ajax": ["src/utils/ajax"],
+      "@ant-design-vue/pro-utils": ["src/components/pro-utils"],
+      "@ant-design-vue/pro-form": ["src/components/pro-form"],
+      "@ant-design-vue/pro-field": ["src/components/pro-field"],
+      "@ant-design-vue/pro-table": ["src/components/pro-table"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },

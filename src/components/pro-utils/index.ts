@@ -30,7 +30,7 @@ import {
   ProSchemaValueEnumObj,
   ProFieldValueEnumType,
 } from "./typings";
-export {
+export type {
   VueNode,
   ProFieldFCMode,
   VueText,

@@ -5,12 +5,12 @@ import {
   type PropType,
   ExtractPropTypes,
 } from "vue";
-import { ProField } from "@/components";
+import ProField from "@ant-design-vue/pro-field";
 import ProFormItem from "../FormItem";
 import { useGridHelpers } from "../../helpers";
 import { useFormInstance } from "../../BaseForm/hooks/useFormInstance";
 import { pick } from "lodash-es";
-import { proFieldProps } from "@/components";
+import { proFieldProps } from "@ant-design-vue/pro-field";
 import {
   proFormGridConfig,
   extendsProps,

@@ -18,7 +18,7 @@ import {
   ProFieldValueObjectType,
   VueNode,
   VueText,
-} from "@/components";
+} from "@ant-design-vue/pro-utils";
 import { isValidElement } from "ant-design-vue/es/_util/props-util";
 import { cloneVNodes } from "ant-design-vue/es/_util/vnode";
 import { warning } from "ant-design-vue/es/vc-util/warning";
@@ -156,7 +156,7 @@ export const proFieldProps = {
   },
 };
 
-type ProFieldPropsType = Partial<ExtractPropTypes<typeof proFieldProps>>;
+export type ProFieldPropsType = Partial<ExtractPropTypes<typeof proFieldProps>>;
 
 const defaultRenderText = (
   dataValue: ProFieldTextType,

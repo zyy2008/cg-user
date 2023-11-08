@@ -2,7 +2,7 @@ import { defineComponent, type App, DefineComponent, Plugin } from "vue";
 import dayjs from "dayjs";
 import { fieldTimePickerProps, FieldTimePickerProps } from "./types";
 import { TimePicker } from "ant-design-vue";
-import { getSlot, VueText } from "@/components";
+import { getSlot, VueText } from "@ant-design-vue/pro-utils";
 import type { VueNode } from "ant-design-vue/lib/_util/type";
 
 export const slots = ["renderExtraFooter", "suffixIcon", "clearIcon"] as any;

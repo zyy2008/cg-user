@@ -1,15 +1,16 @@
 @import (reference) '../../../default.less';
 
-@import 'ant-design-vue/es/checkbox/style/index.less';
-@import 'ant-design-vue/es/space/style/index.less';
-@import 'ant-design-vue/es/popover/style/index.less';
-@import 'ant-design-vue/es/tree/style/index.less';
-@import 'ant-design-vue/es/tooltip/style/index.less';
+@import '~ant-design-vue/es/checkbox/style/index.less';
+@import '~ant-design-vue/es/space/style/index.less';
+@import '~ant-design-vue/es/popover/style/index.less';
+@import '~ant-design-vue/es/tree/style/index.less';
+@import '~ant-design-vue/es/tooltip/style/index.less';
 
 @pro-column-setting-prefix-cls: ~'@{ant-prefix}-pro-table-column-setting';
 
 .@{pro-column-setting-prefix-cls} {
   width: auto;
+
   &-title {
     display: flex;
     align-items: center;
@@ -37,6 +38,7 @@
 
       &:hover {
         background-color: @item-active-bg;
+
         .@{pro-column-setting-prefix-cls}-list-item-option {
           display: block;
         }
@@ -81,12 +83,14 @@
       display: none;
       float: right;
       cursor: pointer;
-      > span {
-        > span.anticon {
+
+      >span {
+        >span.anticon {
           color: @primary-color;
         }
       }
-      > span + span {
+
+      >span+span {
         margin-left: 8px;
       }
     }

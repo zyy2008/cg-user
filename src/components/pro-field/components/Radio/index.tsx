@@ -7,7 +7,7 @@ import {
 } from "vue";
 import { fieldRadioProps, FieldRadioProps } from "./types";
 import { Radio } from "ant-design-vue";
-import { getSlot, VueText, objToMap } from "@/components";
+import { getSlot, VueText, objToMap } from "@ant-design-vue/pro-utils";
 import { proFieldParsingText } from "../Select";
 
 export const slots = ["renderExtraFooter", "suffixIcon", "clearIcon"] as any;

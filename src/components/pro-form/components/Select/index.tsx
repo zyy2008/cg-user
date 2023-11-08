@@ -8,7 +8,7 @@ import {
   PropType,
   ExtractPropTypes,
 } from "vue";
-import { getSlot, type VueNode } from "@/components";
+import { getSlot, type VueNode } from "@ant-design-vue/pro-utils";
 import { pick } from "lodash-es";
 import type { SelectProps, DefaultOptionType } from "ant-design-vue/es/select";
 import ProFormField, { proFormFieldProps } from "../Field";

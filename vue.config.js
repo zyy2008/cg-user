@@ -24,6 +24,11 @@ module.exports = defineConfig({
         // DO NOT REMOVE THIS LINE
         javascriptEnabled: true,
       },
+      // css: {
+      //   modules: {
+      //     auto: () => false,
+      //   },
+      // },
     },
   },
   configureWebpack: {
@@ -31,6 +36,10 @@ module.exports = defineConfig({
       alias: {
         "@": resolve("src"),
         "@ajax": resolve("src/utils/ajax"),
+        "@ant-design-vue/pro-utils": resolve("src/components/pro-utils"),
+        "@ant-design-vue/pro-form": resolve("src/components/pro-form"),
+        "@ant-design-vue/pro-field": resolve("src/components/pro-field"),
+        "@ant-design-vue/pro-table": resolve("src/components/pro-table"),
       },
     },
     output: {

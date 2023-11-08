@@ -2,7 +2,7 @@ import { defineComponent, type App, DefineComponent, Plugin } from "vue";
 import dayjs from "dayjs";
 import { fieldTimeRangePickerProps, FieldTimeRangePickerProps } from "./types";
 import { TimeRangePicker } from "ant-design-vue";
-import { getSlot } from "@/components";
+import { getSlot } from "@ant-design-vue/pro-utils";
 import type { VueNode } from "ant-design-vue/lib/_util/type";
 
 const formatDate = (text: any, format: any) => {

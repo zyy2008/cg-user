@@ -7,7 +7,7 @@ import Provider, {
 import { useFetchData, useFullscreen } from "./hooks";
 import Table, { tableProps } from "ant-design-vue/es/table";
 import { SearchForm, Wrapper, TableAlert, ToolBar } from "./components";
-import { getSlot } from "@/components";
+import { getSlot } from "@ant-design-vue/pro-utils";
 import type { DefineComponent, PropType, Plugin, Slot } from "vue";
 import type { ProTableProps, ActionType, MaybeElement } from "./typings";
 

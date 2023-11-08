@@ -1,11 +1,11 @@
-import { isVNode } from "vue";
-import { useSharedContext } from "../../store/Provider";
-import { Space, Tooltip } from "ant-design-vue";
-import { getSlotVNode } from "@/components";
-import type { FunctionalComponent, VNode } from "vue";
-import type { WithFalse } from "../../typings";
+import { isVNode } from 'vue';
+import { useSharedContext } from '../../store/Provider';
+import { Space, Tooltip } from 'ant-design-vue';
+import { getSlotVNode } from '@ant-design-vue/pro-utils';
+import type { FunctionalComponent, VNode } from 'vue';
+import type { WithFalse } from '../../typings';
 
-import "./index.less";
+import './index.less';
 
 export type ListToolBarSetting = {
   icon: JSX.Element;
@@ -55,17 +55,14 @@ const getSettingItems = (settings: SettingPropType[], className: string) => {
   );
 };
 
-const ListToolBar: FunctionalComponent<ListToolBarProps> = (
-  props,
-  { slots }
-) => {
+const ListToolBar: FunctionalComponent<ListToolBarProps> = (props, { slots }) => {
   const { getPrefixCls } = useSharedContext();
 
-  const className = getPrefixCls("list-toolbar");
+  const className = getPrefixCls('list-toolbar');
 
-  const actions = getSlotVNode<VNode[]>(slots, props, "actions");
+  const actions = getSlotVNode<VNode[]>(slots, props, 'actions');
 
-  const settings = getSlotVNode<SettingPropType[]>(slots, props, "settings");
+  const settings = getSlotVNode<SettingPropType[]>(slots, props, 'settings');
 
   const settingItems = settings && getSettingItems(settings, className);
 
@@ -74,12 +71,7 @@ const ListToolBar: FunctionalComponent<ListToolBarProps> = (
     <div class={className}>
       <div class={`${className}-container`}>
         <div class={`${className}-left`}></div>
-        <Space
-          class={`${className}-right`}
-          align="center"
-          direction="horizontal"
-          size={16}
-        >
+        <Space class={`${className}-right`} align="center" direction="horizontal" size={16}>
           {actions}
           {settingItems}
         </Space>

@@ -1,7 +1,7 @@
 @import (reference) '../../default.less';
 
-@import 'ant-design-vue/es/alert/style/index.less';
-@import 'ant-design-vue/es/space/style/index.less';
+@import '~ant-design-vue/es/alert/style/index.less';
+@import '~ant-design-vue/es/space/style/index.less';
 
 @pro-table-alert-prefix-cls: ~'@{ant-prefix}-pro-table-alert';
 
@@ -17,9 +17,11 @@
     display: flex;
     align-items: center;
     transition: all 0.3s;
+
     &-content {
       flex: 1;
     }
+
     &-option {
       min-width: 48px;
       padding-left: 16px;

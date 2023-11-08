@@ -6,11 +6,11 @@ import {
   DefineComponent,
   Plugin,
 } from "vue";
-import { getSlot } from "@/components";
+import { getSlot } from "@ant-design-vue/pro-utils";
 import type { Dayjs } from "dayjs";
 import type { TimeRangePickerProps } from "ant-design-vue/es/time-picker/time-picker";
 import { pick } from "lodash-es";
-import { fieldTimePickerProps } from "@/components";
+import { fieldTimePickerProps } from "@ant-design-vue/pro-field";
 import ProFormField, { proFormFieldProps } from "../Field";
 import { proFormItemProps } from "../FormItem";
 import type { VueNode } from "ant-design-vue/lib/_util/type";

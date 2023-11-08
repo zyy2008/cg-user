@@ -6,7 +6,7 @@ import {
 } from "vue";
 import { Input } from "ant-design-vue";
 import { textFieldProps, type TextFieldProps } from "./types";
-import "ant-design-vue/es/input/style/index.less";
+// import "~ant-design-vue/es/input/style/index.less";
 
 const FieldText = defineComponent({
   name: "FieldText",

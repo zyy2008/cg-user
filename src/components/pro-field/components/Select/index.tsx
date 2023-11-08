@@ -15,7 +15,7 @@ import {
   ProFieldValueEnumType,
   ProSchemaValueEnumObj,
   VueNode,
-} from "@/components";
+} from "@ant-design-vue/pro-utils";
 import { Spin, Space } from "ant-design-vue";
 import renderEmpty from "ant-design-vue/es/config-provider/renderEmpty";
 import SearchSelect from "./SearchSelect";

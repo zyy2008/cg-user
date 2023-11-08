@@ -5,7 +5,7 @@ import type {
   ProFieldTextType,
   ProSchemaValueEnumObj,
   ProSchemaValueEnumMap,
-} from "@/components";
+} from "@ant-design-vue/pro-utils";
 import type { FormItemProps, FormProps } from "ant-design-vue";
 
 // BaseProFieldProps

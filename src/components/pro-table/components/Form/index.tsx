@@ -1,19 +1,15 @@
-import { defineComponent, reactive, computed, toRaw } from "vue";
-import { useSharedContext } from "../../store/Provider";
-import { QueryFilter, queryFilterProps, ProFormText } from "@/components";
-import type { PropType } from "vue";
-import type { ProColumnsType, ProColumnType } from "../../typings";
+import { defineComponent, reactive, computed, toRaw } from 'vue';
+import { useSharedContext } from '../../store/Provider';
+import { QueryFilter, queryFilterProps, ProFormText } from '@ant-design-vue/pro-form';
+import type { PropType } from 'vue';
+import type { ProColumnsType, ProColumnType } from '../../typings';
 
-import "./index.less";
+import './index.less';
 
 type RecordType = Record<string, unknown>;
 
-const filterSeatchColumns = <T extends RecordType>(
-  columns: ProColumnsType<T> = []
-) =>
-  columns
-    .filter((column) => column.search)
-    .map((column) => column as ProColumnType<T>);
+const filterSeatchColumns = <T extends RecordType>(columns: ProColumnsType<T> = []) =>
+  columns.filter(column => column.search).map(column => column as ProColumnType<T>);
 
 const searchFormProps = {
   ...queryFilterProps,
@@ -22,17 +18,13 @@ const searchFormProps = {
 
 const SearchForm = defineComponent({
   props: searchFormProps,
-  emits: ["finish"],
+  emits: ['finish'],
   setup(props, { emit }) {
     const { getPrefixCls } = useSharedContext();
 
-    const className = [
-      "ant-card",
-      { ["ant-card-bordered"]: true },
-      getPrefixCls("search"),
-    ];
+    const className = ['ant-card', { ['ant-card-bordered']: true }, getPrefixCls('search')];
 
-    const formClassName = getPrefixCls("form");
+    const formClassName = getPrefixCls('form');
 
     const model = reactive({});
 
@@ -41,7 +33,7 @@ const SearchForm = defineComponent({
     return () => {
       if (searchColumns.value.length === 0) return null;
 
-      const formFields = searchColumns.value.map((column) => (
+      const formFields = searchColumns.value.map(column => (
         <ProFormText
           name={column.dataIndex as string}
           label={column.title as string}
@@ -52,7 +44,7 @@ const SearchForm = defineComponent({
       ));
 
       const onFinish = (model: Record<string, unknown>) => {
-        emit("finish", toRaw(model));
+        emit('finish', toRaw(model));
       };
 
       return (

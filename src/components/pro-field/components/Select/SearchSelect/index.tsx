@@ -1,7 +1,7 @@
 import { defineComponent, ref } from "vue";
 import { Select } from "ant-design-vue";
 import { searchSelectProps } from "./types";
-import { getSlot } from "@/components";
+import { getSlot } from "@ant-design-vue/pro-utils";
 
 export const slots = ["default"] as any;
 
