@@ -1,10 +1,24 @@
 import { defineComponent } from "vue";
-import { ProTable } from "@ant-design-vue/pro-table";
+import { Card, Button } from "ant-design-vue";
+import { ButtonModal } from "@/components";
 import "./index.less";
-import { Select } from "ant-design-vue";
 
 export default defineComponent({
   setup() {
-    return () => <ProTable>123</ProTable>;
+    return () => (
+      <Card
+        title={
+          <ButtonModal
+            buttonProps={{
+              type: "primary",
+              children: <div>123</div>,
+            }}
+            modalProps={{
+              children: <div>123</div>,
+            }}
+          />
+        }
+      ></Card>
+    );
   },
 });
