@@ -142,6 +142,10 @@ export const renderProps = {
   request: {
     type: Function as PropType<ProFieldRequestData>,
   },
+
+  params: {
+    type: Object as PropType<Record<string, unknown>>,
+  },
 };
 
 export type RenderProps = Partial<ExtractPropTypes<typeof renderProps>>;

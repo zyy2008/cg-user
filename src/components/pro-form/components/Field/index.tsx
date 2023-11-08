@@ -68,7 +68,7 @@ const ProFormField = defineComponent({
                     },
                   }}
                   request={request}
-                  // params={params}
+                  params={params}
                   formItemProps={{
                     ...props.formItemProps,
                     model: formContext?.model.value,
