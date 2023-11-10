@@ -15,27 +15,11 @@ export default defineComponent({
           ]}
           columns={[
             {
-              title: "菜单名称",
+              title: "部门名称",
               dataIndex: "name",
             },
             {
-              title: "菜单编码",
-              dataIndex: "1",
-            },
-            {
-              title: "图标",
-              dataIndex: "1",
-            },
-            {
-              title: "资源地址",
-              dataIndex: "1",
-            },
-            {
-              title: "授权标识",
-              dataIndex: "1",
-            },
-            {
-              title: "是否隐藏",
+              title: "部门编码",
               dataIndex: "1",
             },
             {

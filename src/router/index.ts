@@ -7,19 +7,19 @@ const routes: RouteRecordRaw[] = [
     name: "index",
     meta: { title: "Home" },
     component: BasicLayout,
-    redirect: "/dashboard",
+    redirect: "/menu",
     children: [
-      {
-        path: "/dashboard",
-        name: "dashboard",
-        meta: { title: "欢迎" },
-        component: () => import("@/views/index.vue"),
-      },
       {
         path: "/menu",
         name: "menu",
         meta: { title: "菜单管理" },
         component: () => import("@/views/menu"),
+      },
+      {
+        path: "/department",
+        name: "department",
+        meta: { title: "部门管理" },
+        component: () => import("@/views/department"),
       },
     ],
   },
