@@ -18,14 +18,14 @@ import {
 
 const props = {
   buttonProps: Object as PropType<
-    ButtonProps & { children: VNode | string; style?: CSSProperties }
+    ButtonProps & { children?: VNode | string; style?: CSSProperties }
   >,
   modalProps: Object as PropType<
-    Omit<ModalProps, "visible" | "onCancel"> & { children: VNode | string }
+    Omit<ModalProps, "visible" | "onCancel"> & { children?: VNode | string }
   >,
   drawerProps: Object as PropType<
     Omit<DrawerProps, "visible" | "onClose"> & {
-      children: VNode | string;
+      children?: VNode | string;
       onOk?: () => void;
     }
   >,
@@ -48,37 +48,42 @@ export default defineComponent({
         visible.value = val;
       },
     } as ButtonModalInstance);
-
     return ({
-      buttonProps,
-      modalProps,
-      drawerProps,
+      buttonProps = {},
+      modalProps = {},
+      drawerProps = {},
       layoutType = "modal",
       onClose,
     }: ButtonModalProps) => {
+      const {
+        children: btnNode,
+        onClick: onBtnClick,
+        ...btnProps
+      } = buttonProps;
+      const { children: modNode, ...modProps } = modalProps;
+      const { children: draNode, ...draProps } = drawerProps;
       return (
         <>
           <Button
-            {...buttonProps}
-            style={buttonProps?.style}
+            {...btnProps}
             onClick={(e) => {
               visible.value = true;
-              buttonProps?.onClick?.(e);
+              onBtnClick?.(e);
             }}
             v-slots={{
-              default: buttonProps?.children,
+              default: () => btnNode,
             }}
           />
           {layoutType === "modal" ? (
             <Modal
-              {...modalProps}
+              {...modProps}
               visible={visible.value}
               onCancel={() => {
                 visible.value = false;
                 onClose?.();
               }}
               v-slots={{
-                default: modalProps?.children,
+                default: () => modNode,
               }}
             />
           ) : (
@@ -102,14 +107,14 @@ export default defineComponent({
               footerStyle={{
                 textAlign: "right",
               }}
-              {...drawerProps}
+              {...draProps}
               visible={visible.value}
               onClose={() => {
                 visible.value = false;
                 onClose?.();
               }}
               v-slots={{
-                default: drawerProps?.children,
+                default: () => draNode,
               }}
             />
           )}

@@ -35,7 +35,7 @@ const BasicLayout = defineComponent({
           collapsed.value = val;
         }}
         layout="top"
-        logo={false}
+        logo={""}
       >
         <RouterView />
       </ProLayout>
