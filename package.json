@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@ant-design-vue/pro-layout": "^3.2.5",
+    "@vueuse/core": "^10.6.0",
     "ant-design-vue": "^3.2.20",
     "core-js": "^3.33.2",
     "lodash-es": "^4.17.21",

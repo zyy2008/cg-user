@@ -1,15 +1,16 @@
 import { defineComponent, ref, watch } from "vue";
 import { Row, Col, Card, Tree, Table } from "ant-design-vue";
+import { emit } from "./bus";
 
 export default defineComponent({
   setup() {
     const selectedKeys = ref<string[]>([]);
     watch([selectedKeys], () => {
-      console.log(selectedKeys.value);
+      emit(selectedKeys.value);
     });
     return () => (
       <Tree
-        // v-modal:selectedKeys={selectedKeys}
+        v-model:selectedKeys={selectedKeys.value}
         defaultExpandAll
         treeData={[
           {
