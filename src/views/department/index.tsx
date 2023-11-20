@@ -1,6 +1,7 @@
 import { defineComponent, ref } from "vue";
-import { Card, Table, Space } from "ant-design-vue";
+import { Card, Table, Space, Popconfirm, Modal } from "ant-design-vue";
 import { Edit, EditInstance, Access } from "./components";
+import { ExclamationCircleOutlined } from "@ant-design/icons-vue";
 
 export default defineComponent({
   setup() {
@@ -35,7 +36,22 @@ export default defineComponent({
                   </a>
                   <a>详情</a>
                   <Access />
-                  <a>删除</a>
+                  <Popconfirm
+                    title="确定删除该条吗?"
+                    onConfirm={() => {
+                      Modal.confirm({
+                        title: "删除部门",
+                        icon: <ExclamationCircleOutlined />,
+                        content:
+                          "该部门关联了用户、岗位、角色、菜单，请先取消关联，才能删除该部门！",
+                        onOk() {
+                          console.log("OK");
+                        },
+                      });
+                    }}
+                  >
+                    <a>删除</a>
+                  </Popconfirm>
                 </Space>
               ),
             },
