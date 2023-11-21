@@ -43,14 +43,10 @@ export default defineComponent({
             children: (
               <Form ref={formRef} model={formState}>
                 <Form.Item label="部门名称" name="1">
-                  <Input />
+                  <Input placeholder="请输入部门名称" />
                 </Form.Item>
                 <Form.Item label="部门编码" name="1">
-                  <Radio.Group>
-                    <Radio value={0}>一级菜单</Radio>
-                    <Radio value={1}>子菜单</Radio>
-                    <Radio value={2}>按钮/权限</Radio>
-                  </Radio.Group>
+                  <Input placeholder="请输入部门编码" />
                 </Form.Item>
                 <Form.Item label="是否本单位部门" name="1">
                   <Switch checkedChildren="是" unCheckedChildren="否" />

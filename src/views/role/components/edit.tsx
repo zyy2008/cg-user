@@ -46,17 +46,22 @@ export default defineComponent({
             children: "新增",
             disabled: disabled.value,
             onClick: () => {
-              title.value = "新增";
+              title.value = "新增角色";
             },
           }}
           layoutType="drawer"
           drawerProps={{
             title: title.value,
-
             children: (
-              <Form ref={formRef} model={formState}>
+              <Form
+                ref={formRef}
+                model={formState}
+                labelCol={{
+                  span: 4,
+                }}
+              >
                 <Form.Item
-                  label="菜单名称"
+                  label="角色编码"
                   name="username"
                   rules={[
                     {
@@ -66,30 +71,18 @@ export default defineComponent({
                 >
                   <Input v-model:value={formState.password} />
                 </Form.Item>
-                <Form.Item label="菜单编码" name="1">
+                <Form.Item
+                  label="角色名称"
+                  name="1"
+                  rules={[
+                    {
+                      required: true,
+                    },
+                  ]}
+                >
                   <Input />
                 </Form.Item>
-                <Form.Item label="菜单类型" name="1">
-                  <Radio.Group>
-                    <Radio value={0}>一级菜单</Radio>
-                    <Radio value={1}>子菜单</Radio>
-                    <Radio value={2}>按钮/权限</Radio>
-                  </Radio.Group>
-                </Form.Item>
-                <Form.Item label="菜单图标" name="1"></Form.Item>
-                <Form.Item label="资源地址" name="1">
-                  <Input />
-                </Form.Item>
-                <Form.Item label="请求参数" name="1">
-                  <Input />
-                </Form.Item>
-                <Form.Item label="授权标识" name="1">
-                  <Input />
-                </Form.Item>
-                <Form.Item label="是否隐藏" name="1">
-                  <Switch checkedChildren="是" unCheckedChildren="否" />
-                </Form.Item>
-                <Form.Item label="菜单说明" name="1">
+                <Form.Item label="角色说明" name="1">
                   <Input.TextArea rows={6} />
                 </Form.Item>
               </Form>

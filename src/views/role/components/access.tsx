@@ -3,6 +3,7 @@ import { ButtonModal, ButtonModalInstance } from "@/components";
 import { Form, Input, Radio, Switch, FormInstance } from "ant-design-vue";
 import { EditInstance } from "./index";
 import Tabs from "./tabs";
+import Menus from "./menus";
 
 interface FormState {
   username: string;
@@ -43,7 +44,7 @@ export default defineComponent({
           layoutType="drawer"
           drawerProps={{
             title: title.value,
-            children: <Tabs />,
+            children: <Menus />,
             onOk: () => {
               formRef.value?.validateFields().then((res) => {
                 console.log(res);

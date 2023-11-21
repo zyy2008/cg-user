@@ -33,12 +33,12 @@ const routes: RouteRecordRaw[] = [
         meta: { title: "岗位管理" },
         component: () => import("@/views/post"),
       },
-      {
-        path: "/editor",
-        name: "editor",
-        meta: { title: "editor" },
-        component: () => import("@/views/editor"),
-      },
+      // {
+      //   path: "/editor",
+      //   name: "editor",
+      //   meta: { title: "editor" },
+      //   component: () => import("@/views/editor"),
+      // },
     ],
   },
 ];
