@@ -39,6 +39,12 @@ const routes: RouteRecordRaw[] = [
         meta: { title: "用户管理" },
         component: () => import("@/views/user"),
       },
+      {
+        path: "/sysConfig",
+        name: "sysConfig",
+        meta: { title: "系统配置" },
+        component: () => import("@/views/sysConfig"),
+      },
       // {
       //   path: "/editor",
       //   name: "editor",

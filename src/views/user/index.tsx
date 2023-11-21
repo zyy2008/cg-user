@@ -53,7 +53,7 @@ export default defineComponent({
                 <Space>
                   <a
                     onClick={() => {
-                      editRef.value?.setTitle("编辑");
+                      editRef.value?.setTitle("编辑用户");
                     }}
                   >
                     编辑

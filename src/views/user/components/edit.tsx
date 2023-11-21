@@ -1,6 +1,13 @@
 import { defineComponent, reactive, ref } from "vue";
 import { ButtonModal, ButtonModalInstance } from "@/components";
-import { Form, Input, Radio, Switch, FormInstance } from "ant-design-vue";
+import {
+  Form,
+  Input,
+  Radio,
+  Switch,
+  FormInstance,
+  TreeSelect,
+} from "ant-design-vue";
 import { EditInstance } from "./index";
 
 interface FormState {
@@ -33,7 +40,7 @@ export default defineComponent({
             type: "primary",
             children: "新增",
             onClick: () => {
-              title.value = "新增";
+              title.value = "新增用户";
             },
           }}
           layoutType="drawer"
@@ -41,15 +48,42 @@ export default defineComponent({
             title: title.value,
 
             children: (
-              <Form ref={formRef} model={formState}>
-                <Form.Item label="部门名称" name="1">
-                  <Input placeholder="请输入部门名称" />
+              <Form
+                ref={formRef}
+                model={formState}
+                labelCol={{
+                  span: 5,
+                }}
+              >
+                <Form.Item label="部门" name="1">
+                  <TreeSelect placeholder="请选择部门" />
                 </Form.Item>
-                <Form.Item label="部门编码" name="1">
-                  <Input placeholder="请输入部门编码" />
+                <Form.Item label="姓名" name="1">
+                  <Input placeholder="请输入姓名" />
                 </Form.Item>
-                <Form.Item label="是否本单位部门" name="1">
+                <Form.Item label="性别" name="1">
+                  <Radio.Group>
+                    <Radio>男</Radio>
+                    <Radio>女</Radio>
+                  </Radio.Group>
+                </Form.Item>
+                <Form.Item label="手机号" name="1">
+                  <Input placeholder="请输入手机号码" />
+                </Form.Item>
+                <Form.Item label="邮箱地址" name="1">
+                  <Input placeholder="请输入邮箱地址" />
+                </Form.Item>
+                <Form.Item label="是否锁定" name="1">
                   <Switch checkedChildren="是" unCheckedChildren="否" />
+                </Form.Item>
+                <Form.Item label="是否有登录账号" name="1">
+                  <Switch checkedChildren="是" unCheckedChildren="否" />
+                </Form.Item>
+                <Form.Item label="登录账号" name="1">
+                  <Input placeholder="请输入登录账号" />
+                </Form.Item>
+                <Form.Item label="登录密码" name="1">
+                  <Input.Password placeholder="请输入登录密码" />
                 </Form.Item>
               </Form>
             ),
