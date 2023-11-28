@@ -1,8 +1,7 @@
-import { defineComponent, reactive, ref, onMounted, onUnmounted } from "vue";
+import { defineComponent, reactive, ref } from "vue";
 import { ButtonModal, ButtonModalInstance } from "@/components";
 import { Form, Input, Radio, Switch, FormInstance } from "ant-design-vue";
 import { EditInstance } from "./index";
-import { on, off } from "./bus";
 
 interface FormState {
   username: string;
@@ -13,7 +12,6 @@ interface FormState {
 export default defineComponent({
   setup(_, { expose }) {
     const title = ref<string>("新增");
-    const disabled = ref<boolean>(true);
     const editRef = ref<ButtonModalInstance>();
     const formRef = ref<FormInstance>();
     const formState = reactive<FormState>({
@@ -21,16 +19,6 @@ export default defineComponent({
       password: "",
       remember: false,
     });
-    const listener = (val: string[]) => {
-      disabled.value = val.length === 0;
-    };
-    onMounted(() => {
-      on(listener);
-    });
-    onUnmounted(() => {
-      off(listener);
-    });
-
     expose({
       setTitle: (val) => {
         title.value = val;
@@ -44,46 +32,24 @@ export default defineComponent({
           buttonProps={{
             type: "primary",
             children: "新增",
-            disabled: disabled.value,
             onClick: () => {
-              title.value = "新增岗位";
+              title.value = "新增";
             },
           }}
           layoutType="drawer"
           drawerProps={{
             title: title.value,
+
             children: (
-              <Form
-                ref={formRef}
-                model={formState}
-                labelCol={{
-                  span: 4,
-                }}
-              >
-                <Form.Item
-                  label="岗位编码"
-                  name="username"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Input v-model:value={formState.password} />
+              <Form ref={formRef} model={formState}>
+                <Form.Item label="部门名称" name="1">
+                  <Input placeholder="请输入部门名称" />
                 </Form.Item>
-                <Form.Item
-                  label="岗位名称"
-                  name="1"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Input />
+                <Form.Item label="部门编码" name="1">
+                  <Input placeholder="请输入部门编码" />
                 </Form.Item>
-                <Form.Item label="岗位说明" name="1">
-                  <Input.TextArea rows={6} />
+                <Form.Item label="是否本单位部门" name="1">
+                  <Switch checkedChildren="是" unCheckedChildren="否" />
                 </Form.Item>
               </Form>
             ),
