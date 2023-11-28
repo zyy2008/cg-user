@@ -1,6 +1,6 @@
 import { defineComponent, ref } from "vue";
 import { Row, Col, Card, Table, Space } from "ant-design-vue";
-import { Edit, DepartTree, EditInstance, Access } from "./components";
+import { Edit, EditInstance, Access } from "./components";
 
 export default defineComponent({
   setup() {
@@ -15,15 +15,15 @@ export default defineComponent({
           ]}
           columns={[
             {
-              title: "岗位编码",
+              title: "角色编码",
               dataIndex: "code",
             },
             {
-              title: "岗位名称",
+              title: "角色名称",
               dataIndex: "2",
             },
             {
-              title: "岗位说明",
+              title: "角色说明",
               dataIndex: "2",
             },
             {
@@ -33,7 +33,7 @@ export default defineComponent({
                   <Space>
                     <a
                       onClick={() => {
-                        editRef.value?.setTitle("编辑岗位");
+                        editRef.value?.setTitle("编辑角色");
                       }}
                     >
                       编辑
