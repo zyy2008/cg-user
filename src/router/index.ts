@@ -24,14 +24,14 @@ const routes: RouteRecordRaw[] = [
       {
         path: "/role",
         name: "role",
-        meta: { title: "角色管理" },
+        meta: { title: "部门角色管理" },
         component: () => import("@/views/role"),
       },
       {
-        path: "/post",
-        name: "post",
-        meta: { title: "岗位管理" },
-        component: () => import("@/views/post"),
+        path: "/adminRole",
+        name: "adminRole",
+        meta: { title: "角色管理" },
+        component: () => import("@/views/admin-role"),
       },
       {
         path: "/user",
