@@ -9,18 +9,39 @@ import {
   Space,
   Popconfirm,
 } from "ant-design-vue";
-import { ButtonModal } from "@/components";
+import { ButtonModal, ButtonModalInstance } from "@/components";
 
 export default defineComponent({
   setup() {
+    const editRef = ref<ButtonModalInstance>();
     return () => (
       <Card
         extra={
           <ButtonModal
+            ref={editRef}
             layoutType="drawer"
             buttonProps={{
               children: "新增",
               type: "primary",
+            }}
+            drawerProps={{
+              children: (
+                <Form
+                  labelCol={{
+                    span: 4,
+                  }}
+                >
+                  <Form.Item label="字典键">
+                    <Input />
+                  </Form.Item>
+                  <Form.Item label="字典键">
+                    <Input />
+                  </Form.Item>
+                  <Form.Item label="字典键">
+                    <Input />
+                  </Form.Item>
+                </Form>
+              ),
             }}
           />
         }
@@ -39,10 +60,15 @@ export default defineComponent({
         }
       >
         <Table
+          dataSource={[
+            {
+              key: "2222",
+            },
+          ]}
           columns={[
             {
               title: "字典键",
-              dataIndex: "1",
+              dataIndex: "key",
             },
             {
               title: "字典值",
@@ -74,7 +100,7 @@ export default defineComponent({
                 <Space>
                   <a
                     onClick={() => {
-                      // editRef.value?.setTitle("编辑用户");
+                      editRef.value?.setVisible(true);
                     }}
                   >
                     编辑
