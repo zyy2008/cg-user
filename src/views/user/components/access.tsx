@@ -20,6 +20,12 @@ const Content = defineComponent({
         <Form.Item label="岗位选择">
           <Select placeholder="请选择岗位" />
         </Form.Item>
+        <Form.Item label="部门选择">
+          <Select placeholder="请选择岗位" />
+        </Form.Item>
+        <Form.Item label="部门角色">
+          <Select placeholder="请选择岗位" />
+        </Form.Item>
         <Form.Item label="菜单选择">
           <TreeSelect placeholder="请选择菜单" />
         </Form.Item>

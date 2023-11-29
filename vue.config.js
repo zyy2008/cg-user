@@ -23,6 +23,7 @@ module.exports = defineConfig({
         modifyVars: {},
         // DO NOT REMOVE THIS LINE
         javascriptEnabled: true,
+        paths: [path.resolve(__dirname, "node_modules")],
       },
       // css: {
       //   modules: {
