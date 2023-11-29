@@ -20,10 +20,12 @@ module.exports = defineConfig({
   css: {
     loaderOptions: {
       less: {
-        modifyVars: {},
-        // DO NOT REMOVE THIS LINE
-        javascriptEnabled: true,
-        paths: [path.resolve(__dirname, "node_modules")],
+        lessOptions: {
+          modifyVars: {},
+          // DO NOT REMOVE THIS LINE
+          javascriptEnabled: true,
+          paths: [path.resolve(__dirname, "node_modules")],
+        },
       },
       // css: {
       //   modules: {
