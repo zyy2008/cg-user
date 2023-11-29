@@ -1,0 +1,6804 @@
+{
+  "info": {
+    "title": "长管用户",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "sys-dept-controller"
+    },
+    {
+      "name": "sys-menu-controller"
+    },
+    {
+      "name": "sys-role-controller"
+    },
+    {
+      "name": "sys-user-controller"
+    }
+  ],
+  "paths": {
+    "/dept": {
+      "post": {
+        "summary": "add",
+        "x-apifox-folder": "sys-dept-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "addUsingPOST",
+        "tags": [
+          "sys-dept-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysDept%E5%AF%B9%E8%B1%A1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096924-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "put": {
+        "summary": "edit",
+        "x-apifox-folder": "sys-dept-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "editUsingPUT",
+        "tags": [
+          "sys-dept-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysDept%E5%AF%B9%E8%B1%A1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096925-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/dept/list": {
+      "get": {
+        "summary": "list",
+        "x-apifox-folder": "sys-dept-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "listUsingGET",
+        "tags": [
+          "sys-dept-controller"
+        ],
+        "parameters": [
+          {
+            "name": "ancestors",
+            "in": "query",
+            "description": "祖级列表",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "deptId",
+            "in": "query",
+            "description": "部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "deptName",
+            "in": "query",
+            "description": "部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "leaderId",
+            "in": "query",
+            "description": "负责人",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "orderNum",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "parentId",
+            "in": "query",
+            "description": "父部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "parentName",
+            "in": "query",
+            "description": "父部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "phone",
+            "in": "query",
+            "description": "联系电话",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "部门状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096926-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/dept/list/exclude/{deptId}": {
+      "get": {
+        "summary": "excludeChild",
+        "x-apifox-folder": "sys-dept-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "excludeChildUsingGET",
+        "tags": [
+          "sys-dept-controller"
+        ],
+        "parameters": [
+          {
+            "name": "deptId",
+            "in": "path",
+            "description": "deptId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096927-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/dept/{deptId}": {
+      "get": {
+        "summary": "getInfo",
+        "x-apifox-folder": "sys-dept-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getInfoUsingGET",
+        "tags": [
+          "sys-dept-controller"
+        ],
+        "parameters": [
+          {
+            "name": "deptId",
+            "in": "path",
+            "description": "deptId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096928-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "remove",
+        "x-apifox-folder": "sys-dept-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "removeUsingDELETE",
+        "tags": [
+          "sys-dept-controller"
+        ],
+        "parameters": [
+          {
+            "name": "deptId",
+            "in": "path",
+            "description": "deptId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "204": {
+            "description": "No Content",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096929-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/menu": {
+      "post": {
+        "summary": "add",
+        "x-apifox-folder": "sys-menu-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "addUsingPOST_1",
+        "tags": [
+          "sys-menu-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysMenu%E5%AF%B9%E8%B1%A1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096930-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "put": {
+        "summary": "edit",
+        "x-apifox-folder": "sys-menu-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "editUsingPUT_1",
+        "tags": [
+          "sys-menu-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysMenu%E5%AF%B9%E8%B1%A1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096931-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/menu/getRouters": {
+      "get": {
+        "summary": "getRouters",
+        "x-apifox-folder": "sys-menu-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getRoutersUsingGET",
+        "tags": [
+          "sys-menu-controller"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096932-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/menu/list": {
+      "get": {
+        "summary": "list",
+        "x-apifox-folder": "sys-menu-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "listUsingGET_1",
+        "tags": [
+          "sys-menu-controller"
+        ],
+        "parameters": [
+          {
+            "name": "createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "icon",
+            "in": "query",
+            "description": "菜单图标",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "menuCode",
+            "in": "query",
+            "description": "菜单编码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "menuId",
+            "in": "query",
+            "description": "菜单ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "menuName",
+            "in": "query",
+            "description": "菜单名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "menuType",
+            "in": "query",
+            "description": "菜单类型（M目录 C菜单 F按钮）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "orderNum",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "params",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "parentId",
+            "in": "query",
+            "description": "父菜单ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "parentName",
+            "in": "query",
+            "description": "父菜单名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "description": "请求地址",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "perms",
+            "in": "query",
+            "description": "权限标识",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "请求参数",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "菜单状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "visible",
+            "in": "query",
+            "description": "菜单状态（0显示 1隐藏）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096933-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/menu/roleMenuTreeselect/{roleId}": {
+      "get": {
+        "summary": "roleMenuTreeselect",
+        "x-apifox-folder": "sys-menu-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "roleMenuTreeselectUsingGET",
+        "tags": [
+          "sys-menu-controller"
+        ],
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "description": "roleId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096934-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/menu/treeselect": {
+      "get": {
+        "summary": "treeselect",
+        "x-apifox-folder": "sys-menu-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "treeselectUsingGET",
+        "tags": [
+          "sys-menu-controller"
+        ],
+        "parameters": [
+          {
+            "name": "createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "icon",
+            "in": "query",
+            "description": "菜单图标",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "menuCode",
+            "in": "query",
+            "description": "菜单编码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "menuId",
+            "in": "query",
+            "description": "菜单ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "menuName",
+            "in": "query",
+            "description": "菜单名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "menuType",
+            "in": "query",
+            "description": "菜单类型（M目录 C菜单 F按钮）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "orderNum",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "params",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "parentId",
+            "in": "query",
+            "description": "父菜单ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "parentName",
+            "in": "query",
+            "description": "父菜单名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "description": "请求地址",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "perms",
+            "in": "query",
+            "description": "权限标识",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "请求参数",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "菜单状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "visible",
+            "in": "query",
+            "description": "菜单状态（0显示 1隐藏）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096935-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/menu/{menuId}": {
+      "get": {
+        "summary": "getInfo",
+        "x-apifox-folder": "sys-menu-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getInfoUsingGET_1",
+        "tags": [
+          "sys-menu-controller"
+        ],
+        "parameters": [
+          {
+            "name": "menuId",
+            "in": "path",
+            "description": "menuId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096936-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "remove",
+        "x-apifox-folder": "sys-menu-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "removeUsingDELETE_1",
+        "tags": [
+          "sys-menu-controller"
+        ],
+        "parameters": [
+          {
+            "name": "menuId",
+            "in": "path",
+            "description": "menuId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "204": {
+            "description": "No Content",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096937-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role": {
+      "post": {
+        "summary": "add",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "addUsingPOST_2",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysRole%E5%AF%B9%E8%B1%A1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096938-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "put": {
+        "summary": "edit",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "editUsingPUT_2",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysRole%E5%AF%B9%E8%B1%A1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096939-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/authUser/allocatedList": {
+      "get": {
+        "summary": "allocatedList",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "allocatedListUsingGET",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "avatar",
+            "in": "query",
+            "description": "头像地址",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.ancestors",
+            "in": "query",
+            "description": "祖级列表",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.deptId",
+            "in": "query",
+            "description": "部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.deptName",
+            "in": "query",
+            "description": "部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.email",
+            "in": "query",
+            "description": "邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.leaderId",
+            "in": "query",
+            "description": "负责人",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.orderNum",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.parentId",
+            "in": "query",
+            "description": "父部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.parentName",
+            "in": "query",
+            "description": "父部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.phone",
+            "in": "query",
+            "description": "联系电话",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.status",
+            "in": "query",
+            "description": "部门状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "deptId",
+            "in": "query",
+            "description": "部门ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "用户邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "loginDate",
+            "in": "query",
+            "description": "最后登录时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "loginIp",
+            "in": "query",
+            "description": "最后登录IP",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "nickName",
+            "in": "query",
+            "description": "用户名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "密码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "phonenumber",
+            "in": "query",
+            "description": "手机号码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roleId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roleIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].admin",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].dataScope",
+            "in": "query",
+            "description": "数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].deptCheckStrictly",
+            "in": "query",
+            "description": "部门树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].deptIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].flag",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].menuCheckStrictly",
+            "in": "query",
+            "description": "菜单树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].menuIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].permissions",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleId",
+            "in": "query",
+            "description": "角色ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleKey",
+            "in": "query",
+            "description": "角色编码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleName",
+            "in": "query",
+            "description": "角色名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleSort",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].status",
+            "in": "query",
+            "description": "角色状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "sex",
+            "in": "query",
+            "description": "用户性别（0男 1女 2未知）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "帐号状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "用户ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "用户账号",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "userType",
+            "in": "query",
+            "description": "用户类型（00系统用户）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TableDataInfo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096940-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/authUser/cancel": {
+      "put": {
+        "summary": "cancelAuthUser",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "cancelAuthUserUsingPUT",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysUserRole%E5%AF%B9%E8%B1%A1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096941-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/authUser/cancelAll": {
+      "put": {
+        "summary": "cancelAuthUserAll",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "cancelAuthUserAllUsingPUT",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "query",
+            "description": "roleId",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "userIds",
+            "in": "query",
+            "description": "userIds",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096942-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/authUser/selectAll": {
+      "put": {
+        "summary": "selectAuthUserAll",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "selectAuthUserAllUsingPUT",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "query",
+            "description": "roleId",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "userIds",
+            "in": "query",
+            "description": "userIds",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096943-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/authUser/unallocatedList": {
+      "get": {
+        "summary": "unallocatedList",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "unallocatedListUsingGET",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "avatar",
+            "in": "query",
+            "description": "头像地址",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.ancestors",
+            "in": "query",
+            "description": "祖级列表",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.deptId",
+            "in": "query",
+            "description": "部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.deptName",
+            "in": "query",
+            "description": "部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.email",
+            "in": "query",
+            "description": "邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.leaderId",
+            "in": "query",
+            "description": "负责人",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.orderNum",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.parentId",
+            "in": "query",
+            "description": "父部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.parentName",
+            "in": "query",
+            "description": "父部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.phone",
+            "in": "query",
+            "description": "联系电话",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.status",
+            "in": "query",
+            "description": "部门状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "deptId",
+            "in": "query",
+            "description": "部门ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "用户邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "loginDate",
+            "in": "query",
+            "description": "最后登录时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "loginIp",
+            "in": "query",
+            "description": "最后登录IP",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "nickName",
+            "in": "query",
+            "description": "用户名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "密码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "phonenumber",
+            "in": "query",
+            "description": "手机号码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roleId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roleIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].admin",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].dataScope",
+            "in": "query",
+            "description": "数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].deptCheckStrictly",
+            "in": "query",
+            "description": "部门树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].deptIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].flag",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].menuCheckStrictly",
+            "in": "query",
+            "description": "菜单树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].menuIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].permissions",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleId",
+            "in": "query",
+            "description": "角色ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleKey",
+            "in": "query",
+            "description": "角色编码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleName",
+            "in": "query",
+            "description": "角色名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleSort",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].status",
+            "in": "query",
+            "description": "角色状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "sex",
+            "in": "query",
+            "description": "用户性别（0男 1女 2未知）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "帐号状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "用户ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "用户账号",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "userType",
+            "in": "query",
+            "description": "用户类型（00系统用户）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TableDataInfo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096944-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/changeStatus": {
+      "put": {
+        "summary": "changeStatus",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "changeStatusUsingPUT",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysRole%E5%AF%B9%E8%B1%A1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096945-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/dataScope": {
+      "put": {
+        "summary": "dataScope",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "dataScopeUsingPUT",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysRole%E5%AF%B9%E8%B1%A1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096946-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/deptTree/{roleId}": {
+      "get": {
+        "summary": "deptTree",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "deptTreeUsingGET",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "description": "roleId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096947-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/list": {
+      "get": {
+        "summary": "list",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "listUsingGET_2",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dataScope",
+            "in": "query",
+            "description": "数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "deptCheckStrictly",
+            "in": "query",
+            "description": "部门树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "deptIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "flag",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "menuCheckStrictly",
+            "in": "query",
+            "description": "菜单树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "menuIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "permissions",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roleId",
+            "in": "query",
+            "description": "角色ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roleKey",
+            "in": "query",
+            "description": "角色编码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roleName",
+            "in": "query",
+            "description": "角色名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roleSort",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "角色状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TableDataInfo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096948-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/optionselect": {
+      "get": {
+        "summary": "optionselect",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "optionselectUsingGET",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096949-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/{roleIds}": {
+      "delete": {
+        "summary": "remove",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "removeUsingDELETE_2",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "roleIds",
+            "in": "path",
+            "description": "roleIds",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "204": {
+            "description": "No Content",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096950-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/role/{roleId}": {
+      "get": {
+        "summary": "getInfo",
+        "x-apifox-folder": "sys-role-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getInfoUsingGET_2",
+        "tags": [
+          "sys-role-controller"
+        ],
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "description": "roleId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096951-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user": {
+      "post": {
+        "summary": "add",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "addUsingPOST_3",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysUser%E5%AF%B9%E8%B1%A1Req"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096952-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "put": {
+        "summary": "edit",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "editUsingPUT_3",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysUser%E5%AF%B9%E8%B1%A1Req"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096953-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "get": {
+        "summary": "getInfo",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getInfoUsingGET_4",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096954-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/authRole": {
+      "put": {
+        "summary": "insertAuthRole",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "insertAuthRoleUsingPUT",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "roleIds",
+            "in": "query",
+            "description": "roleIds",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "userId",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096955-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/authRole/{userId}": {
+      "get": {
+        "summary": "authRole",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "authRoleUsingGET",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096956-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/changeStatus": {
+      "put": {
+        "summary": "changeStatus",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "changeStatusUsingPUT_1",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysUser%E5%AF%B9%E8%B1%A1Req"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096957-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/deptTree": {
+      "get": {
+        "summary": "deptTree",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "deptTreeUsingGET_1",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "ancestors",
+            "in": "query",
+            "description": "祖级列表",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "deptId",
+            "in": "query",
+            "description": "部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "deptName",
+            "in": "query",
+            "description": "部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "leaderId",
+            "in": "query",
+            "description": "负责人",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "orderNum",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "parentId",
+            "in": "query",
+            "description": "父部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "parentName",
+            "in": "query",
+            "description": "父部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "phone",
+            "in": "query",
+            "description": "联系电话",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "部门状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096958-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/export": {
+      "post": {
+        "summary": "export",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "exportUsingPOST",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "avatar",
+            "in": "query",
+            "description": "头像地址",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.ancestors",
+            "in": "query",
+            "description": "祖级列表",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.deptId",
+            "in": "query",
+            "description": "部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.deptName",
+            "in": "query",
+            "description": "部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.email",
+            "in": "query",
+            "description": "邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.leaderId",
+            "in": "query",
+            "description": "负责人",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.orderNum",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.parentId",
+            "in": "query",
+            "description": "父部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.parentName",
+            "in": "query",
+            "description": "父部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.phone",
+            "in": "query",
+            "description": "联系电话",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.status",
+            "in": "query",
+            "description": "部门状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "deptId",
+            "in": "query",
+            "description": "部门ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "用户邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "loginDate",
+            "in": "query",
+            "description": "最后登录时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "loginIp",
+            "in": "query",
+            "description": "最后登录IP",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "nickName",
+            "in": "query",
+            "description": "用户名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "密码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "phonenumber",
+            "in": "query",
+            "description": "手机号码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roleId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roleIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].admin",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].dataScope",
+            "in": "query",
+            "description": "数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].deptCheckStrictly",
+            "in": "query",
+            "description": "部门树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].deptIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].flag",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].menuCheckStrictly",
+            "in": "query",
+            "description": "菜单树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].menuIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].permissions",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleId",
+            "in": "query",
+            "description": "角色ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleKey",
+            "in": "query",
+            "description": "角色编码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleName",
+            "in": "query",
+            "description": "角色名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleSort",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].status",
+            "in": "query",
+            "description": "角色状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "sex",
+            "in": "query",
+            "description": "用户性别（0男 1女 2未知）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "帐号状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "用户ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "用户账号",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "userType",
+            "in": "query",
+            "description": "用户类型（00系统用户）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096959-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/getInfo": {
+      "get": {
+        "summary": "getInfo",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getInfoUsingGET_3",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096960-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/importData": {
+      "post": {
+        "summary": "importData",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "importDataUsingPOST",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "updateSupport",
+            "in": "query",
+            "description": "updateSupport",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096961-run",
+        "security": [],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/importTemplate": {
+      "post": {
+        "summary": "importTemplate",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "importTemplateUsingPOST",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096962-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/info/{username}": {
+      "get": {
+        "summary": "info",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "infoUsingGET",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "username",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R%C2%ABLoginUser%C2%BB"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096963-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/list": {
+      "get": {
+        "summary": "list",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "listUsingGET_3",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "avatar",
+            "in": "query",
+            "description": "头像地址",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.ancestors",
+            "in": "query",
+            "description": "祖级列表",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.deptId",
+            "in": "query",
+            "description": "部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.deptName",
+            "in": "query",
+            "description": "部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.email",
+            "in": "query",
+            "description": "邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.leaderId",
+            "in": "query",
+            "description": "负责人",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.orderNum",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.parentId",
+            "in": "query",
+            "description": "父部门id",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "dept.parentName",
+            "in": "query",
+            "description": "父部门名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.phone",
+            "in": "query",
+            "description": "联系电话",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.status",
+            "in": "query",
+            "description": "部门状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "dept.updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "deptId",
+            "in": "query",
+            "description": "部门ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "用户邮箱",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "loginDate",
+            "in": "query",
+            "description": "最后登录时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "loginIp",
+            "in": "query",
+            "description": "最后登录IP",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "nickName",
+            "in": "query",
+            "description": "用户名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "密码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "phonenumber",
+            "in": "query",
+            "description": "手机号码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roleId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roleIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].admin",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].createBy",
+            "in": "query",
+            "description": "创建者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].createTime",
+            "in": "query",
+            "description": "创建时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].dataScope",
+            "in": "query",
+            "description": "数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].delFlag",
+            "in": "query",
+            "description": "删除标志（0代表存在 2代表删除）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].deptCheckStrictly",
+            "in": "query",
+            "description": "部门树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].deptIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].flag",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].menuCheckStrictly",
+            "in": "query",
+            "description": "菜单树选择项是否关联显示",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].menuIds",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].permissions",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "",
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "roles[0].remark",
+            "in": "query",
+            "description": "备注",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleId",
+            "in": "query",
+            "description": "角色ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleKey",
+            "in": "query",
+            "description": "角色编码",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleName",
+            "in": "query",
+            "description": "角色名称",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].roleSort",
+            "in": "query",
+            "description": "显示顺序",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].status",
+            "in": "query",
+            "description": "角色状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "roles[0].updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "sex",
+            "in": "query",
+            "description": "用户性别（0男 1女 2未知）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "帐号状态（0正常 1停用）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateBy",
+            "in": "query",
+            "description": "更新者",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "updateTime",
+            "in": "query",
+            "description": "更新时间",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "用户ID",
+            "required": false,
+            "type": "integer",
+            "x-example": ""
+          },
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "用户账号",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "userType",
+            "in": "query",
+            "description": "用户类型（00系统用户）",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TableDataInfo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096964-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/register": {
+      "post": {
+        "summary": "register",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "registerUsingPOST",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysUser%E5%AF%B9%E8%B1%A1Req"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/R%C2%ABboolean%C2%BB"
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096965-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/resetPwd": {
+      "put": {
+        "summary": "resetPwd",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "resetPwdUsingPUT",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SysUser%E5%AF%B9%E8%B1%A1Req"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096966-run",
+        "security": [],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/{userIds}": {
+      "delete": {
+        "summary": "remove",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "removeUsingDELETE_3",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "userIds",
+            "in": "path",
+            "description": "userIds",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "204": {
+            "description": "No Content",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096967-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/user/{userId}": {
+      "get": {
+        "summary": "getInfo",
+        "x-apifox-folder": "sys-user-controller",
+        "x-apifox-status": "released",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getInfoUsingGET_5",
+        "tags": [
+          "sys-user-controller"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "type": "integer",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "x-apifox-orders": []
+              },
+              "x-apifox-orders": [],
+              "properties": {},
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-apifox-orders": [],
+              "x-apifox-ignore-properties": []
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3673822/apis/api-129096968-run",
+        "security": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    }
+  },
+  "swagger": "2.0",
+  "definitions": {
+    "TableDataInfo": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msg": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "x-apifox-orders": [],
+            "properties": {},
+            "x-apifox-ignore-properties": []
+          }
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "TableDataInfo",
+      "x-apifox-orders": [
+        "code",
+        "msg",
+        "rows",
+        "total"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "SysUser对象Res": {
+      "type": "object",
+      "properties": {
+        "admin": {
+          "type": "boolean"
+        },
+        "avatar": {
+          "type": "string",
+          "description": "头像地址"
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "delFlag": {
+          "type": "string",
+          "description": "删除标志（0代表存在 2代表删除）"
+        },
+        "dept": {
+          "$ref": "#/definitions/SysDept%E5%AF%B9%E8%B1%A1"
+        },
+        "deptId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "部门ID"
+        },
+        "email": {
+          "type": "string",
+          "description": "用户邮箱"
+        },
+        "loginDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "最后登录时间"
+        },
+        "loginIp": {
+          "type": "string",
+          "description": "最后登录IP"
+        },
+        "nickName": {
+          "type": "string",
+          "description": "用户名称"
+        },
+        "password": {
+          "type": "string",
+          "description": "密码"
+        },
+        "phonenumber": {
+          "type": "string",
+          "description": "手机号码"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "roleId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "roleIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SysRole%E5%AF%B9%E8%B1%A1Res"
+          }
+        },
+        "sex": {
+          "type": "string",
+          "description": "用户性别（0男 1女 2未知）"
+        },
+        "status": {
+          "type": "string",
+          "description": "帐号状态（0正常 1停用）"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户ID"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户账号"
+        },
+        "userType": {
+          "type": "string",
+          "description": "用户类型（00系统用户）"
+        }
+      },
+      "title": "SysUser对象Res",
+      "description": "用户信息表",
+      "x-apifox-orders": [
+        "admin",
+        "avatar",
+        "createBy",
+        "createTime",
+        "delFlag",
+        "dept",
+        "deptId",
+        "email",
+        "loginDate",
+        "loginIp",
+        "nickName",
+        "password",
+        "phonenumber",
+        "remark",
+        "roleId",
+        "roleIds",
+        "roles",
+        "sex",
+        "status",
+        "updateBy",
+        "updateTime",
+        "userId",
+        "userName",
+        "userType"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "SysUser对象Req": {
+      "type": "object",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": "头像地址"
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "delFlag": {
+          "type": "string",
+          "description": "删除标志（0代表存在 2代表删除）"
+        },
+        "dept": {
+          "$ref": "#/definitions/SysDept%E5%AF%B9%E8%B1%A1"
+        },
+        "deptId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "部门ID"
+        },
+        "email": {
+          "type": "string",
+          "description": "用户邮箱"
+        },
+        "loginDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "最后登录时间"
+        },
+        "loginIp": {
+          "type": "string",
+          "description": "最后登录IP"
+        },
+        "nickName": {
+          "type": "string",
+          "description": "用户名称"
+        },
+        "password": {
+          "type": "string",
+          "description": "密码"
+        },
+        "phonenumber": {
+          "type": "string",
+          "description": "手机号码"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "roleId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "roleIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SysRole%E5%AF%B9%E8%B1%A1Req"
+          }
+        },
+        "sex": {
+          "type": "string",
+          "description": "用户性别（0男 1女 2未知）"
+        },
+        "status": {
+          "type": "string",
+          "description": "帐号状态（0正常 1停用）"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户ID"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户账号"
+        },
+        "userType": {
+          "type": "string",
+          "description": "用户类型（00系统用户）"
+        }
+      },
+      "title": "SysUser对象Req",
+      "description": "用户信息表",
+      "x-apifox-orders": [
+        "avatar",
+        "createBy",
+        "createTime",
+        "delFlag",
+        "dept",
+        "deptId",
+        "email",
+        "loginDate",
+        "loginIp",
+        "nickName",
+        "password",
+        "phonenumber",
+        "remark",
+        "roleId",
+        "roleIds",
+        "roles",
+        "sex",
+        "status",
+        "updateBy",
+        "updateTime",
+        "userId",
+        "userName",
+        "userType"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "SysUserRole对象": {
+      "type": "object",
+      "properties": {
+        "roleId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "角色ID"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户ID"
+        }
+      },
+      "title": "SysUserRole对象",
+      "description": "用户和角色关联表",
+      "x-apifox-orders": [
+        "roleId",
+        "userId"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "SysRole对象Res": {
+      "type": "object",
+      "properties": {
+        "admin": {
+          "type": "boolean"
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "dataScope": {
+          "type": "string",
+          "description": "数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）"
+        },
+        "delFlag": {
+          "type": "string",
+          "description": "删除标志（0代表存在 2代表删除）"
+        },
+        "deptCheckStrictly": {
+          "type": "boolean",
+          "description": "部门树选择项是否关联显示"
+        },
+        "deptIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "flag": {
+          "type": "boolean"
+        },
+        "menuCheckStrictly": {
+          "type": "boolean",
+          "description": "菜单树选择项是否关联显示"
+        },
+        "menuIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "permissions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "roleId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "角色ID"
+        },
+        "roleKey": {
+          "type": "string",
+          "description": "角色编码"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "角色名称"
+        },
+        "roleSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "显示顺序"
+        },
+        "status": {
+          "type": "string",
+          "description": "角色状态（0正常 1停用）"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "SysRole对象Res",
+      "description": "角色信息表",
+      "x-apifox-orders": [
+        "admin",
+        "createBy",
+        "createTime",
+        "dataScope",
+        "delFlag",
+        "deptCheckStrictly",
+        "deptIds",
+        "flag",
+        "menuCheckStrictly",
+        "menuIds",
+        "permissions",
+        "remark",
+        "roleId",
+        "roleKey",
+        "roleName",
+        "roleSort",
+        "status",
+        "updateBy",
+        "updateTime"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "SysRole对象Req": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "dataScope": {
+          "type": "string",
+          "description": "数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）"
+        },
+        "delFlag": {
+          "type": "string",
+          "description": "删除标志（0代表存在 2代表删除）"
+        },
+        "deptCheckStrictly": {
+          "type": "boolean",
+          "description": "部门树选择项是否关联显示"
+        },
+        "deptIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "flag": {
+          "type": "boolean"
+        },
+        "menuCheckStrictly": {
+          "type": "boolean",
+          "description": "菜单树选择项是否关联显示"
+        },
+        "menuIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "permissions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "roleId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "角色ID"
+        },
+        "roleKey": {
+          "type": "string",
+          "description": "角色编码"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "角色名称"
+        },
+        "roleSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "显示顺序"
+        },
+        "status": {
+          "type": "string",
+          "description": "角色状态（0正常 1停用）"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "SysRole对象Req",
+      "description": "角色信息表",
+      "x-apifox-orders": [
+        "createBy",
+        "createTime",
+        "dataScope",
+        "delFlag",
+        "deptCheckStrictly",
+        "deptIds",
+        "flag",
+        "menuCheckStrictly",
+        "menuIds",
+        "permissions",
+        "remark",
+        "roleId",
+        "roleKey",
+        "roleName",
+        "roleSort",
+        "status",
+        "updateBy",
+        "updateTime"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "SysRole对象": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "dataScope": {
+          "type": "string",
+          "description": "数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）"
+        },
+        "delFlag": {
+          "type": "string",
+          "description": "删除标志（0代表存在 2代表删除）"
+        },
+        "deptCheckStrictly": {
+          "type": "boolean",
+          "description": "部门树选择项是否关联显示"
+        },
+        "deptIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "flag": {
+          "type": "boolean"
+        },
+        "menuCheckStrictly": {
+          "type": "boolean",
+          "description": "菜单树选择项是否关联显示"
+        },
+        "menuIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "permissions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "roleId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "角色ID"
+        },
+        "roleKey": {
+          "type": "string",
+          "description": "角色编码"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "角色名称"
+        },
+        "roleSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "显示顺序"
+        },
+        "status": {
+          "type": "string",
+          "description": "角色状态（0正常 1停用）"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "SysRole对象",
+      "description": "角色信息表",
+      "x-apifox-orders": [
+        "createBy",
+        "createTime",
+        "dataScope",
+        "delFlag",
+        "deptCheckStrictly",
+        "deptIds",
+        "flag",
+        "menuCheckStrictly",
+        "menuIds",
+        "permissions",
+        "remark",
+        "roleId",
+        "roleKey",
+        "roleName",
+        "roleSort",
+        "status",
+        "updateBy",
+        "updateTime"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "SysMenu对象": {
+      "type": "object",
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SysMenu%E5%AF%B9%E8%B1%A1"
+          }
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "icon": {
+          "type": "string",
+          "description": "菜单图标"
+        },
+        "menuCode": {
+          "type": "string",
+          "description": "菜单编码"
+        },
+        "menuId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "菜单ID"
+        },
+        "menuName": {
+          "type": "string",
+          "description": "菜单名称"
+        },
+        "menuType": {
+          "type": "string",
+          "description": "菜单类型（M目录 C菜单 F按钮）"
+        },
+        "orderNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "显示顺序"
+        },
+        "params": {
+          "type": "object",
+          "x-apifox-orders": [],
+          "properties": {},
+          "x-apifox-ignore-properties": []
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "父菜单ID"
+        },
+        "parentName": {
+          "type": "string",
+          "description": "父菜单名称"
+        },
+        "path": {
+          "type": "string",
+          "description": "请求地址"
+        },
+        "perms": {
+          "type": "string",
+          "description": "权限标识"
+        },
+        "query": {
+          "type": "string",
+          "description": "请求参数"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "status": {
+          "type": "string",
+          "description": "菜单状态（0正常 1停用）"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        },
+        "visible": {
+          "type": "string",
+          "description": "菜单状态（0显示 1隐藏）"
+        }
+      },
+      "title": "SysMenu对象",
+      "description": "菜单权限表",
+      "x-apifox-orders": [
+        "children",
+        "createBy",
+        "createTime",
+        "icon",
+        "menuCode",
+        "menuId",
+        "menuName",
+        "menuType",
+        "orderNum",
+        "params",
+        "parentId",
+        "parentName",
+        "path",
+        "perms",
+        "query",
+        "remark",
+        "status",
+        "updateBy",
+        "updateTime",
+        "visible"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "SysDept对象": {
+      "type": "object",
+      "properties": {
+        "ancestors": {
+          "type": "string",
+          "description": "祖级列表"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SysDept%E5%AF%B9%E8%B1%A1"
+          }
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "delFlag": {
+          "type": "string",
+          "description": "删除标志（0代表存在 2代表删除）"
+        },
+        "deptId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "部门id"
+        },
+        "deptName": {
+          "type": "string",
+          "description": "部门名称"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "leaderId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "负责人"
+        },
+        "orderNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "显示顺序"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "父部门id"
+        },
+        "parentName": {
+          "type": "string",
+          "description": "父部门名称"
+        },
+        "phone": {
+          "type": "string",
+          "description": "联系电话"
+        },
+        "status": {
+          "type": "string",
+          "description": "部门状态（0正常 1停用）"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "SysDept对象",
+      "description": "部门表",
+      "x-apifox-orders": [
+        "ancestors",
+        "children",
+        "createBy",
+        "createTime",
+        "delFlag",
+        "deptId",
+        "deptName",
+        "email",
+        "leaderId",
+        "orderNum",
+        "parentId",
+        "parentName",
+        "phone",
+        "status",
+        "updateBy",
+        "updateTime"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "R«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "R«boolean»",
+      "x-apifox-orders": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "R«LoginUser»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/LoginUser"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "R«LoginUser»",
+      "x-apifox-orders": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    },
+    "LoginUser": {
+      "type": "object",
+      "properties": {
+        "expireTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ipaddr": {
+          "type": "string"
+        },
+        "loginTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "permissions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "roles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "sysUser": {
+          "$ref": "#/definitions/SysUser%E5%AF%B9%E8%B1%A1Res"
+        },
+        "token": {
+          "type": "string"
+        },
+        "userid": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "title": "LoginUser",
+      "x-apifox-orders": [
+        "expireTime",
+        "ipaddr",
+        "loginTime",
+        "permissions",
+        "roles",
+        "sysUser",
+        "token",
+        "userid",
+        "username"
+      ],
+      "x-apifox-ignore-properties": [],
+      "x-apifox-folder": "Schemas"
+    }
+  },
+  "securityDefinitions": {},
+  "x-components": {}
+}

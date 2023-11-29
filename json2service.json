@@ -1,14 +1,37 @@
 {
   "url": "api.json",
-  "remoteUrl": "http://192.169.7.200:3000/api/open/plugin/export-full?type=json&pid=53&status=all&token=9bb5c2c760bd39f8ed1b0dabc35247ffe8d1c8089c7bb4dfe6f43806ccbc73cb",
-  "type": "yapi",
+  "remoteUrl": "http://127.0.0.1:4523/export/openapi?projectId=3673822&version=2.0",
+  "type": "swagger",
   "swaggerParser": {},
   "validateResponse": false,
-  "yapiConfig": {
-    "required": false,
-    "bodyJsonRequired": false,
-    "categoryMap": {
-      "中文": "English"
+  "guardConfig": {
+    "methodUrl2OperationIdMap": {
+      "post /dept": "addUsingPOST",
+      "post /menu": "addUsingPOST_1",
+      "post /role": "addUsingPOST_2",
+      "post /user": "addUsingPOST_3",
+      "put /dept": "editUsingPUT",
+      "put /menu": "editUsingPUT_1",
+      "put /role": "editUsingPUT_2",
+      "put /user": "editUsingPUT_3",
+      "get /dept/list": "listUsingGET",
+      "get /menu/list": "listUsingGET_1",
+      "get /role/list": "listUsingGET_2",
+      "get /user/list": "listUsingGET_3",
+      "get /dept/{deptId}": "getInfoUsingGET",
+      "get /menu/{menuId}": "getInfoUsingGET_1",
+      "get /role/{roleId}": "getInfoUsingGET_2",
+      "get /user": "getInfoUsingGET_4",
+      "get /user/getInfo": "getInfoUsingGET_3",
+      "get /user/{userId}": "getInfoUsingGET_5",
+      "delete /dept/{deptId}": "removeUsingDELETE",
+      "delete /menu/{menuId}": "removeUsingDELETE_1",
+      "delete /role/{roleIds}": "removeUsingDELETE_2",
+      "delete /user/{userIds}": "removeUsingDELETE_3",
+      "put /role/changeStatus": "changeStatusUsingPUT",
+      "put /user/changeStatus": "changeStatusUsingPUT_1",
+      "get /role/deptTree/{roleId}": "deptTreeUsingGET",
+      "get /user/deptTree": "deptTreeUsingGET_1"
     }
   }
 }
