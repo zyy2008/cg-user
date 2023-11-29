@@ -3,27 +3,17 @@ import { Tabs, Table, Space, Card, FormInstance } from "ant-design-vue";
 import { ButtonModal, ButtonModalInstance } from "@/components";
 import { createForm } from "@formily/core";
 import { createSchemaField, ISchema } from "@formily/vue";
-import { Form, FormItem, Input, Switch, Submit } from "@formily/antdv-x3";
+import { Form, FormItem, Input, Switch, Select } from "@formily/antdv-x3";
+import { schema } from "./schema";
 
 const { SchemaField } = createSchemaField({
   components: {
     FormItem,
     Switch,
     Input,
+    Select,
   },
 });
-
-const schema: ISchema = {
-  type: "object",
-  properties: {
-    name: {
-      type: "string",
-      title: "规则名称",
-      "x-decorator": "FormItem",
-      "x-component": "Input",
-    },
-  },
-};
 
 const ButtonPane = defineComponent({
   setup() {
@@ -149,33 +139,6 @@ const DataPane = defineComponent({
               children: (
                 <Form form={form} ref={formRef}>
                   <SchemaField schema={schema} />
-                  {/* <Form.Item label="规则名称">
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label="数据编码">
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label="数据名称">
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label="数据SQL">
-                    <Input.TextArea rows={6} />
-                  </Form.Item>
-                  <Form.Item label="数据说明">
-                    <Input.TextArea rows={6} />
-                  </Form.Item>
-                  <Form.Item label="条件规则">
-                    <Select />
-                  </Form.Item>
-                  <Form.Item label="规则值">
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label="是否关联人-星">
-                    <Switch checkedChildren="是" unCheckedChildren="否" />
-                  </Form.Item>
-                  <Form.Item label="关联方式">
-                    <Input />
-                  </Form.Item> */}
                 </Form>
               ),
             }}
