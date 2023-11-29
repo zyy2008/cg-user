@@ -1,7 +1,9 @@
 import { defineComponent, reactive, ref } from "vue";
 import { ButtonModal, ButtonModalInstance } from "@/components";
-import { Form, Input, Radio, Switch, FormInstance } from "ant-design-vue";
 import { EditInstance } from "./index";
+import { FormDrawer, FormLayout, FormItem, Input } from "@formily/antdv-x3";
+import { createSchemaField } from "@formily/vue";
+import { schema } from "./schema";
 
 interface FormState {
   username: string;
@@ -9,60 +11,20 @@ interface FormState {
   remember: boolean;
 }
 
+const { SchemaField } = createSchemaField({
+  components: {
+    FormItem,
+    Input,
+  },
+});
+
 export default defineComponent({
   setup(_, { expose }) {
-    const title = ref<string>("新增");
-    const editRef = ref<ButtonModalInstance>();
-    const formRef = ref<FormInstance>();
-    const formState = reactive<FormState>({
-      username: "",
-      password: "",
-      remember: false,
-    });
-    expose({
-      setTitle: (val) => {
-        title.value = val;
-        editRef.value?.setVisible(true);
-      },
-    } as EditInstance);
     return () => {
       return (
-        <ButtonModal
-          ref={editRef}
-          buttonProps={{
-            type: "primary",
-            children: "新增",
-            onClick: () => {
-              title.value = "新增";
-            },
-          }}
-          layoutType="drawer"
-          drawerProps={{
-            title: title.value,
-
-            children: (
-              <Form ref={formRef} model={formState}>
-                <Form.Item label="部门名称" name="1">
-                  <Input placeholder="请输入部门名称" />
-                </Form.Item>
-                <Form.Item label="部门编码" name="1">
-                  <Input placeholder="请输入部门编码" />
-                </Form.Item>
-                <Form.Item label="是否本单位部门" name="1">
-                  <Switch checkedChildren="是" unCheckedChildren="否" />
-                </Form.Item>
-              </Form>
-            ),
-            onOk: () => {
-              formRef.value?.validateFields().then((res) => {
-                console.log(res);
-              });
-            },
-          }}
-          onClose={() => {
-            formRef.value?.resetFields();
-          }}
-        />
+        <FormLayout labelCol={6} wrapperCol={10}>
+          <SchemaField schema={schema} />
+        </FormLayout>
       );
     };
   },

@@ -1,13 +1,24 @@
 import { defineComponent, ref } from "vue";
-import { Card, Table, Space, Popconfirm, Modal } from "ant-design-vue";
+import { Card, Table, Space, Popconfirm, Modal, Button } from "ant-design-vue";
 import { Edit, EditInstance, Access } from "./components";
 import { ExclamationCircleOutlined } from "@ant-design/icons-vue";
+import { FormDrawer, FormLayout, FormItem, Input } from "@formily/antdv-x3";
 
 export default defineComponent({
   setup() {
     const editRef = ref<EditInstance>();
     return () => (
-      <Card title={<Edit ref={editRef} />}>
+      <Card
+        title={
+          <Button
+            onClick={() => {
+              FormDrawer("22", <div>123</div>).open();
+            }}
+          >
+            111
+          </Button>
+        }
+      >
         <Table
           dataSource={[
             {
