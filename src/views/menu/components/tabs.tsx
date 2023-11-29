@@ -2,8 +2,15 @@ import { defineComponent, ref } from "vue";
 import { Tabs, Table, Space, Card, FormInstance } from "ant-design-vue";
 import { ButtonModal, ButtonModalInstance } from "@/components";
 import { createForm } from "@formily/core";
-import { createSchemaField, ISchema } from "@formily/vue";
-import { Form, FormItem, Input, Switch, Select } from "@formily/antdv-x3";
+import { createSchemaField } from "@formily/vue";
+import {
+  Form,
+  FormItem,
+  Input,
+  Switch,
+  Select,
+  FormLayout,
+} from "@formily/antdv-x3";
 import { schema } from "./schema";
 
 const { SchemaField } = createSchemaField({
@@ -138,7 +145,9 @@ const DataPane = defineComponent({
 
               children: (
                 <Form form={form} ref={formRef}>
-                  <SchemaField schema={schema} />
+                  <FormLayout labelCol={6}>
+                    <SchemaField schema={schema} />
+                  </FormLayout>
                 </Form>
               ),
             }}
