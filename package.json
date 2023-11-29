@@ -47,7 +47,7 @@
     "@formily/core": "^2.3.0",
     "@formily/vue": "^2.3.0",
     "@vue/composition-api": "^1.7.2",
-    "@vueuse/core": "^10.6.0",
+    "@vueuse/core": "^10.6.1",
     "ant-design-vue": "^3.2.20",
     "core-js": "^3.33.2",
     "lodash-es": "^4.17.21",
